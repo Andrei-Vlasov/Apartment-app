@@ -1,11 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-
+import './sass/main.sass';
+ 
+const title = 'React with Webpack and Babel';
+ 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
+  <h1>{title}</h1>,
+  document.getElementById('app')
 );
+
+module.hot.accept();
