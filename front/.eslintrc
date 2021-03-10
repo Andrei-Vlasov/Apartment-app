@@ -4,12 +4,12 @@
         "prettier"
     ],
     "extends": [
-        "prettier",
-        "eslint:recommended"
+        "prettier"
     ],
     "rules": {
         "semi": ["warn","always"],
         "quotes" : ["warn", "single"],
         "prettier/prettier": "warn"
-    }
+    },
+    "parser": "babel-eslint"
 }
