@@ -6,12 +6,15 @@
   "private": true,
   "license": "UNLICENSED",
   "scripts": {
-    "format": "prettier --write \"**/*.js\"",
     "start": "babel-node index.js",
     "start:dev": "nodemon",
-    "test": "jest",
     "test:cov": "jest --coverage",
-    "test:e2e": "jest --config ./test/jest-e2e.json"
+    "test:e2e": "jest --config ./test/jest-e2e.json",
+    "lint": "npx eslint ./",
+    "lint-fix": "eslint --fix ./",
+    "test": "npx lint",
+    "format": "npx prettier --write ./",
+    "pre-commit": "npm run format && npm run lint-fix"
   },
   "dependencies": {
     "@nestjs/common": "^7.0.0",
@@ -30,6 +33,7 @@
     "@babel/register": "^7.6.2",
     "@babel/runtime": "^7.6.2",
     "@nestjs/testing": "^7.0.0",
+    "babel-eslint": "^10.1.0",
     "eslint": "^7.21.0",
     "eslint-config-prettier": "^8.1.0",
     "eslint-plugin-import": "^2.22.1",
