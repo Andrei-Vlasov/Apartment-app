@@ -1,0 +1,15 @@
+{
+    "root": true,
+    "plugins": [
+        "prettier"
+    ],
+    "extends": [
+        "prettier",
+        "eslint:recommended"
+    ],
+    "rules": {
+        "semi": ["warn","always"],
+        "quotes" : ["warn", "single"],
+        "prettier/prettier": "warn"
+    }
+}
