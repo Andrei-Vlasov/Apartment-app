@@ -1,0 +1,21 @@
+{
+    "root": true,
+    "env": {
+        "node": true
+    },
+    "plugins": ["prettier"],
+    "extends": [
+        "prettier"
+    ],
+    "rules": {
+        "quotes": ["error", "single"],
+        "semi": ["error", "always"],
+        "prettier/prettier": "error"
+    },
+    "parser": "babel-eslint",
+    "parserOptions": {
+        "ecmaFeatures": {
+            "legacyDecorators": true
+        }
+    }
+}
