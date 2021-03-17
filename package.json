@@ -5,8 +5,8 @@
   "license": "MIT",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 0",
-    "nest-lint": "cd nest-app-es && npm run lint && npm run check-format",
-    "front-lint": "cd front && npm run lint && npm run check-format"
+    "nest-lint": "cd nest-app-es && npm run lint",
+    "front-lint": "cd front && npm run lint"
   },
   "husky": {
     "hooks": {
