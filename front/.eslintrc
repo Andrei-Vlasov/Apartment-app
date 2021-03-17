@@ -1,15 +1,36 @@
 {
     "root": true,
     "plugins": [
-        "prettier"
+        "prettier",
+        "react"
     ],
     "extends": [
-        "prettier"
+        "prettier",
+        "eslint:recommended",
+        "plugin:react/recommended"
     ],
     "rules": {
-        "semi": ["warn","always"],
-        "quotes" : ["warn", "single"],
-        "prettier/prettier": "warn"
+        "semi": [
+            "error",
+            "always"
+        ],
+        "quotes": [
+            "error",
+            "single"
+        ],
+        "prettier/prettier": "error",
+        "react/react-in-jsx-scope": "off",
+        "react/prop-types": "off"
     },
-    "parser": "babel-eslint"
+    "parser": "babel-eslint",
+    "parserOptions": {
+        "ecmaFeatures": {
+            "jsx": true
+        }
+    },
+    "settings": {
+        "react": {
+            "version": "detect"
+        }
+    }
 }

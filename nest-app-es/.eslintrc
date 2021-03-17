@@ -3,13 +3,22 @@
     "env": {
         "node": true
     },
-    "plugins": ["prettier"],
-    "extends": [
+    "plugins": [
         "prettier"
     ],
+    "extends": [
+        "prettier",
+        "eslint:recommended"
+    ],
     "rules": {
-        "quotes": ["error", "single"],
-        "semi": ["error", "always"],
+        "quotes": [
+            "error",
+            "single"
+        ],
+        "semi": [
+            "error",
+            "always"
+        ],
         "prettier/prettier": "error"
     },
     "parser": "babel-eslint",
