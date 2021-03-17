@@ -13,8 +13,8 @@
         "lint": "npx eslint ./",
         "lint-fix": "eslint --fix ./",
         "test": "npx lint",
-        "format": "npx prettier --write ./**",
-        "pre-commit": "npm run format && npm run lint-fix"
+        "check-format": "npx prettier ./**",
+        "format": "npx prettier --write ./**"
     },
     "dependencies": {
         "@nestjs/common": "^7.0.0",

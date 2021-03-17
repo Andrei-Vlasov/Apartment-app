@@ -5,12 +5,13 @@
   "main": "",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 0",
-    "nest-lint": "cd nest-app-es && npm run pre-commit",
-    "front-lint": "cd front && npm run pre-commit"
+    "nest-lint": "cd nest-app-es && npm run lint && npm run check-format",
+    "front-lint": "cd front && npm run lint && npm run check-format"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run nest-lint && npm run front-lint"
+      "pre-commit": "npm run nest-lint && npm run front-lint",
+      "pre-push": "npm run nest-lint && npm run front-lint"
     }
   },
   "repository": {
