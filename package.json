@@ -1,8 +1,8 @@
 {
   "name": "apartment-app",
   "version": "1.0.0",
-  "description": "",
-  "main": "",
+  "private": true,
+  "license": "MIT",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 0",
     "nest-lint": "cd nest-app-es && npm run lint && npm run check-format",
@@ -18,8 +18,6 @@
     "type": "git",
     "url": "git+https://github.com/ilkrbk/Apartment-app.git"
   },
-  "author": "",
-  "license": "ISC",
   "bugs": {
     "url": "https://github.com/ilkrbk/Apartment-app/issues"
   },
