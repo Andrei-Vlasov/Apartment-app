@@ -8,12 +8,6 @@
     "nest-lint": "cd nest-app-es && npm run lint",
     "front-lint": "cd front && npm run lint"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "npm run nest-lint && npm run front-lint",
-      "pre-push": "npm run nest-lint && npm run front-lint"
-    }
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ilkrbk/Apartment-app.git"
