@@ -2,6 +2,7 @@ module.exports = {
   parser: '@typescript-eslint/parser',
   parserOptions: {
     project: 'tsconfig.json',
+    tsconfigRootDir: __dirname,
     sourceType: 'module',
   },
   plugins: ['@typescript-eslint/eslint-plugin'],
@@ -14,8 +15,4 @@ module.exports = {
     node: true,
   },
   ignorePatterns: ['.eslintrc.js'],
-  rules: {
-    // I prefix before interface name
-    '@typescript-eslint/interface-name-prefix': 'always',
-  },
 };
