@@ -33,3 +33,7 @@ yarn-error.log*
 # vercel
 .vercel
 nest-app-es/node_modules
+
+
+# nestjs
+*dist
