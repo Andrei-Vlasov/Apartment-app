@@ -37,3 +37,6 @@ nest-app-es/node_modules
 
 # nestjs
 *dist
+
+# environment vars
+**.env
