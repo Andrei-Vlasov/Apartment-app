@@ -1,9 +1,14 @@
-import { Controller, Get } from '@nestjs/common';
+import { Body, Controller, Get, Post } from '@nestjs/common';
+import { ApartmentService } from './apartment.service';
+import { CreateApartmentDto } from './dto/create-apartment.dto';
 
 @Controller('/apartments')
 export class ApartmentController {
-    addApartment() {
-        console.log('controller_addApartment');
+    constructor(private apartmentService: ApartmentService) {}
+
+    @Post()
+    addApartment(@Body() dto: CreateApartmentDto) {
+        return this.apartmentService.addApartment(dto);
     }
 
     @Get()
