@@ -28,7 +28,7 @@ export class ApartmentService {
             const client = await pool.connect();
             console.log('conn');
 
-            const sql = `insert into "ApartmentAdvert"("AuthorID", "DateCreated", "DealType", "LocationData", "Price", "Title", "RoomCount", "Space", "LivingSpace", "Height", "Floor", "TotalFloors", "Year Built", "Condition", "Heating", "Walls")
+            const sql = `insert into "ApartmentAdvert"("AuthorID", "DateCreated", "DealType", "LocationData", "Price", "Title", "RoomCount", "Space", "LivingSpace", "Height", "Floor", "TotalFloors", "YearBuilt", "Condition", "Heating", "Walls")
             values (${authorId},'${dateCreated}',${dealType},'${locationData}',${price},'${title}',${roomCount},${space},${livingSpace},${height},${floor},${totalFloors},${yearBuilt},'${condition}','${heating}','${walls}')`;
 
             const { rows } = await client.query(sql);
