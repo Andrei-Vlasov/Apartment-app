@@ -44,9 +44,10 @@ export class ApartmentService {
         }
     }
 
-    async getAllApartments() {
+    async getAllApartments(id: number) {
         const client = await pool.connect();
-        const sql = 'select * from "ApartmentAdvert" limit 10';
+
+        const sql = `select * from "ApartmentAdvert" where "AuthorID"=${Number(id)}`;
 
         const { rows } = await client.query(sql);
         const apartments = rows;

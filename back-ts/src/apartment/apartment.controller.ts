@@ -1,4 +1,4 @@
-import { Body, Controller, Get, Post } from '@nestjs/common';
+import { Body, Controller, Get, Param, Post } from '@nestjs/common';
 import { ApartmentService } from './apartment.service';
 import { CreateApartmentDto } from './dto/create-apartment.dto';
 
@@ -11,10 +11,10 @@ export class ApartmentController {
         return this.apartmentService.addApartment(dto);
     }
 
-    @Get()
-    getAllApartments() {
-        console.log('controller_getAllApartments');
-        return 'return all apartments';
+    // Get apartments created by a user
+    @Get(':id')
+    getAllApartments(@Param('id') id: number) {
+        return this.apartmentService.getAllApartments(id);
     }
 
     getOneApartment() {
