@@ -25,7 +25,7 @@ CREATE TABLE "ApartmentAdvert" (
     "Height" int,
     "Floor" int,
     "TotalFloors" int,
-    "Year Built" int,
+    "YearBuilt" int,
     "Condition" varchar(255),
     "Heating" varchar(255),
     "Walls" varchar(255),
