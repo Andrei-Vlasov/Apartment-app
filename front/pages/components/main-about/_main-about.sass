@@ -1,0 +1,43 @@
+.main-about
+    padding: 100px 0
+    position: relative
+    &::after
+        content: ''
+        background: url('../../../public/img/bg-main-about.svg') 50% 50% no-repeat
+        width: 30%
+        height: 100%
+        position: absolute
+        left: 12%
+        top: 0
+    
+.main-about__info
+    width: 50%
+    margin-left: auto
+
+.main-about__title
+    font-weight: 700
+    @include font ($basicFont, 2rem, $darkGrey)
+
+.main-about__descr
+    margin-top: 30px
+    @include font ($basicFont, 1.2rem, $darkGrey)
+
+.main-about__list
+    margin-top: 40px
+    display: flex
+    justify-content: space-between
+
+.main-about__item
+    display: flex
+    flex-direction: column
+    align-items: center
+    padding: 0 20px
+    i 
+        border: solid 1px $black
+        padding: 10px
+        border-radius: 50%
+        font-size: 1.2rem
+
+.main-about__item-descr
+    text-align: center
+    @include font ($basicFont, 1rem, $darkGrey)
