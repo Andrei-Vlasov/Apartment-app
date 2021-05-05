@@ -1,0 +1,195 @@
+.search-map-wrap
+    display: flex
+    
+.search
+    width: 50%
+    height: 100vh
+    overflow-y: scroll
+
+#map
+    width: 50%
+    height: 100vh
+
+.search__sort
+    display: flex
+    flex-wrap: wrap
+    padding: 15px
+    input, select, button
+        border: none
+        padding: 15px 45px 15px 15px
+        border-radius: 2px
+        background: $lightGrey
+        font-weight: 300
+        @include font ($mainFont, 1rem, $black)
+
+.sort__search
+    width: calc( (((100% - 10px) / 3) * 2) + 5px )
+    margin-right: 5px
+
+.sort__price
+    margin-right: 5px
+    margin-top: 5px
+
+.sort__btn
+    margin-top: 5px
+    width: calc( (100% - 10px) / 3 )
+    display: flex
+    justify-content: center
+    padding-right: 15px !important
+
+.sort__params
+    margin-top: 20px
+    width: calc( (100% - 10px) / 3 )
+
+.sort__select, .search__item
+    width: calc( (100% - 10px) / 3 )
+
+.search__list
+    margin-top: 15px
+    display: flex
+    flex-wrap: wrap
+    width: 100%
+    
+.search__item
+    width: calc( (100% - 10px) / 3 )
+    margin-right: 5px
+    margin-top: 5px
+    &:nth-child(3n)
+        margin-right: 0
+    > select
+        width: 100%
+
+.search__list-article
+    display: flex
+    flex-direction: column
+    padding: 15px
+
+.search__item-article
+    display: flex
+    position: relative
+    padding: 15px 0
+    &::before
+        content: ''
+        width: 100%
+        height: 1px
+        position: absolute
+        left: 0
+        top: 0
+        background: $lightGrey
+    &:last-child
+        &::after
+            content: ''
+            width: 100%
+            height: 1px
+            position: absolute
+            left: 0
+            bottom: 0
+            background: $lightGrey
+
+.search__item-slider
+    position: relative
+    overflow: hidden
+    width: 50%
+    height: 300px
+    margin-right: 15px
+
+.search__item-info
+    display: flex
+    flex-direction: column
+    width: 50%
+
+.article__price
+    font-weight: 700
+    @include font ($basicFont, 2rem, $black)
+
+.article__price-per-square
+    font-weight: 700 
+    @include font ($basicFont, 0.8rem, $darkGrey)
+
+.article__address
+    margin-top: 20px
+    font-weight: 700 
+    @include font ($basicFont, 1.2rem, $black)
+
+.article__wrap-details
+    display: flex
+    flex-wrap: wrap
+    margin-top: 10px
+    > span
+        margin-right: 10px
+        margin-top: 10px
+        width: calc( 50% - 10px )
+        @include font ($basicFont, 1rem, $black)
+        &:nth-child(2n)
+            margin-right: 0
+            width: 50%
+
+.article__square
+    display: flex
+    margin-top: 20px
+    span
+        font-weight: 700
+        display: flex
+        padding: 5px 15px
+        background: $lightGrey
+        border-radius: 10px
+        margin-right: 10px
+        @include font ($basicFont, 0.8rem, $black)
+        &:last-child
+            margin-right: 0
+
+.article__floor
+    span
+        font-weight: 700
+
+.article__wrap-btns
+    display: flex
+    margin-top: auto
+
+.article__link
+    padding: 12px
+    border-radius: 30px
+    background: $lightGrey
+    margin-right: 10px
+    text-transform: uppercase
+    @include font ($basicFont, 1rem, $black)
+
+.article__share, .article__like
+    display: flex
+    align-items: center
+    padding: 12px 13px
+    border-radius: 40px
+    background: $lightGrey
+    margin-right: 10px
+    font-size: 1rem
+
+.article__share
+    margin-left: auto
+
+.article__like
+    margin-right: 0
+
+.search__list-pages
+    display: flex
+
+.search__list-pages
+    display: flex
+    margin: 0 auto
+    padding: 30px 0
+    width: 200px
+    justify-content: space-between
+
+.search__item-pages
+    width: 30px
+    height: 30px
+    display: flex
+    justify-content: center
+    align-items: center
+    background: $lightGrey
+    border-radius: 50%
+    font-weight: 700
+    @include font ($basicFont, 1rem, $black)
+
+.search__item-pages--active
+    color: $white
+    background: $blue
