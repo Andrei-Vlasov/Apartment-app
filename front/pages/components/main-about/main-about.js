@@ -5,7 +5,12 @@ export default function MainAbout() {
                 <div className="container">
                     <div className="main-about__info">
                         <h1 className="main-about__title">Чим ми займаємося</h1>
-                        <p className="main-about__descr">Appartment - це пошуковик нерухомості на вторинному ринку. Ми збираємо всі актуальні оголошення, групуємо дублікати та пропонуємо нашим користувачам у 29 країнах зручний інтерфейс для перегляду всіх пропозицій в одному місці.</p>
+                        <p className="main-about__descr">
+                            Appartment - це пошуковик нерухомості на вторинному ринку. Ми збираємо
+                            всі актуальні оголошення, групуємо дублікати та пропонуємо нашим
+                            користувачам у 29 країнах зручний інтерфейс для перегляду всіх
+                            пропозицій в одному місці.
+                        </p>
                         <ul className="main-about__list">
                             <li className="main-about__item">
                                 <i className="fas fa-list-ul"></i>
@@ -13,7 +18,9 @@ export default function MainAbout() {
                             </li>
                             <li className="main-about__item">
                                 <i className="fas fa-layer-group"></i>
-                                <p className="main-about__item-descr">дублікати оголошень згруповані</p>
+                                <p className="main-about__item-descr">
+                                    дублікати оголошень згруповані
+                                </p>
                             </li>
                             <li className="main-about__item">
                                 <i className="fas fa-check"></i>
@@ -28,5 +35,5 @@ export default function MainAbout() {
                 </div>
             </section>
         </>
-    )
+    );
 }

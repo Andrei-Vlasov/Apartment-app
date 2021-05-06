@@ -1,8 +1,7 @@
-import Head from 'next/head'
-import HeaderLayout from '../header/header'
-import Footer from '../footer/footer'
-import Layout from '../layout'
-import Link from 'next/link'
+import Head from 'next/head';
+import HeaderLayout from '../header/header';
+import Footer from '../footer/footer';
+import Layout from '../layout';
 
 export default function Register() {
     return (
@@ -14,20 +13,22 @@ export default function Register() {
             <div className="create-ad">
                 <h1 className="create-ad__title">Создание обьявления</h1>
                 <form className="create-ad__form">
-                    <input type="text" placeholder="Заголовок" className="create-ad__input"/>
-                    <input type="text" placeholder="Комнаты" className="create-ad__input"/>
-                    <input type="text" placeholder="Цена" className="create-ad__input"/>
-                    <input type="text" placeholder="Год постройки" className="create-ad__input"/>
-                    <input type="text" placeholder="Цена за кв." className="create-ad__input"/>
-                    <input type="text" placeholder="Высота потолка" className="create-ad__input"/>
-                    <input type="text" placeholder="Этажность дома" className="create-ad__input"/>
-                    <input type="text" placeholder="Общая площадь" className="create-ad__input"/>
-                    <input type="text" placeholder="Жилая площадь" className="create-ad__input"/>
-                    <input type="text" placeholder="Этаж" className="create-ad__input"/>
+                    <input type="text" placeholder="Заголовок" className="create-ad__input" />
+                    <input type="text" placeholder="Комнаты" className="create-ad__input" />
+                    <input type="text" placeholder="Цена" className="create-ad__input" />
+                    <input type="text" placeholder="Год постройки" className="create-ad__input" />
+                    <input type="text" placeholder="Цена за кв." className="create-ad__input" />
+                    <input type="text" placeholder="Высота потолка" className="create-ad__input" />
+                    <input type="text" placeholder="Этажность дома" className="create-ad__input" />
+                    <input type="text" placeholder="Общая площадь" className="create-ad__input" />
+                    <input type="text" placeholder="Жилая площадь" className="create-ad__input" />
+                    <input type="text" placeholder="Этаж" className="create-ad__input" />
                     <ul className="create-ad__list">
                         <li className="create-ad__item">
                             <select>
-                                <option value disabled selected>Год постройки</option>
+                                <option value disabled selected>
+                                    Год постройки
+                                </option>
                                 <option>АППС</option>
                                 <option>АППС-люкс</option>
                                 <option>БСП</option>
@@ -40,7 +41,9 @@ export default function Register() {
                         </li>
                         <li className="create-ad__item">
                             <select>
-                                <option value disabled selected>Стени</option>
+                                <option value disabled selected>
+                                    Стени
+                                </option>
                                 <option>блочные</option>
                                 <option>панельные</option>
                                 <option>Кирпичные</option>
@@ -50,7 +53,9 @@ export default function Register() {
                         </li>
                         <li className="create-ad__item">
                             <select>
-                                <option value disabled selected>Отопление</option>
+                                <option value disabled selected>
+                                    Отопление
+                                </option>
                                 <option>автономное</option>
                                 <option>индивидуальное</option>
                                 <option>централизованное</option>
@@ -58,16 +63,18 @@ export default function Register() {
                         </li>
                         <li className="create-ad__item">
                             <select>
-                                <option value disabled selected>Ремонт</option>
+                                <option value disabled selected>
+                                    Ремонт
+                                </option>
                                 <option>без ремонта</option>
-                                <option>"бабушкин ремонт"</option>
+                                <option>&quot;бабушкин ремонт&quot;</option>
                                 <option>евроремонт</option>
                                 <option>дизайнерский ремонт</option>
                             </select>
                         </li>
                     </ul>
                     <button className="create-ad__btn">Создать чертеж</button>
-                    <textarea type="text" placeholder="Описание" className="create-ad__textarea"/>
+                    <textarea type="text" placeholder="Описание" className="create-ad__textarea" />
                     <button className="create-ad__btn">Создать</button>
                 </form>
             </div>

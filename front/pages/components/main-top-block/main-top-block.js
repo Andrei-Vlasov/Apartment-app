@@ -1,4 +1,4 @@
-import Link from 'next/link'
+import Link from 'next/link';
 
 export default function MainTopBlock() {
     return (
@@ -19,10 +19,12 @@ export default function MainTopBlock() {
                             <option>Львів</option>
                             <option>Харків</option>
                         </select>
-                        <Link href="/components/search"><a className="main-top-block__btn">пошук</a></Link>
+                        <Link href="/components/search">
+                            <a className="main-top-block__btn">пошук</a>
+                        </Link>
                     </form>
                 </div>
             </section>
         </>
-    )
+    );
 }

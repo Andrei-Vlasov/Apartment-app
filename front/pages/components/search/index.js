@@ -1,10 +1,10 @@
-import HeaderLayout from '../../components/header/header'
-import Footer from '../../components/footer/footer'
-import Map from '../../wrap-map'
-import Layout from '../layout'
-import Head from 'next/head'
-import Link from 'next/link'
-import Image from 'next/image'
+import HeaderLayout from '../../components/header/header';
+import Footer from '../../components/footer/footer';
+import Map from '../../wrap-map';
+import Layout from '../layout';
+import Head from 'next/head';
+import Link from 'next/link';
+import Image from 'next/image';
 
 export default function Search() {
     return (
@@ -16,22 +16,38 @@ export default function Search() {
                 <div className="search">
                     <HeaderLayout></HeaderLayout>
                     <form className="search__sort">
-                        <input type="text" placeholder="Город, улица, станция метро" className="sort__search"/>
+                        <input
+                            type="text"
+                            placeholder="Город, улица, станция метро"
+                            className="sort__search"
+                        />
                         <select className="sort__rooms sort__select">
-                            <option value disabled selected>Комнат</option>
+                            <option value disabled selected>
+                                Комнат
+                            </option>
                             <option>1</option>
                             <option>2</option>
                             <option>3</option>
                             <option>4</option>
                             <option>5+</option>
                         </select>
-                        <input type="text" className="sort__price sort__select" placeholder="Цена: от"/>
-                        <input type="text" className="sort__price sort__select" placeholder="Цена: до"/>
+                        <input
+                            type="text"
+                            className="sort__price sort__select"
+                            placeholder="Цена: от"
+                        />
+                        <input
+                            type="text"
+                            className="sort__price sort__select"
+                            placeholder="Цена: до"
+                        />
                         <button className="sort__btn">Еще фильтры</button>
                         <ul className="search__list">
                             <li className="search__item">
                                 <select>
-                                    <option value disabled selected>Год постройки</option>
+                                    <option value disabled selected>
+                                        Год постройки
+                                    </option>
                                     <option>1950-1959</option>
                                     <option>1960-1969</option>
                                     <option>1970-1979</option>
@@ -44,7 +60,9 @@ export default function Search() {
                             </li>
                             <li className="search__item">
                                 <select>
-                                    <option value disabled selected>Год постройки</option>
+                                    <option value disabled selected>
+                                        Год постройки
+                                    </option>
                                     <option>АППС</option>
                                     <option>АППС-люкс</option>
                                     <option>БСП</option>
@@ -57,7 +75,9 @@ export default function Search() {
                             </li>
                             <li className="search__item">
                                 <select>
-                                    <option value disabled selected>Высота потолка</option>
+                                    <option value disabled selected>
+                                        Высота потолка
+                                    </option>
                                     <option>от 2.5 м</option>
                                     <option>от 2.8 м</option>
                                     <option>от 3 м</option>
@@ -67,7 +87,9 @@ export default function Search() {
                             </li>
                             <li className="search__item">
                                 <select>
-                                    <option value disabled selected>Стени</option>
+                                    <option value disabled selected>
+                                        Стени
+                                    </option>
                                     <option>блочные</option>
                                     <option>панельные</option>
                                     <option>Кирпичные</option>
@@ -77,7 +99,9 @@ export default function Search() {
                             </li>
                             <li className="search__item">
                                 <select>
-                                    <option value disabled selected>Этажность дома</option>
+                                    <option value disabled selected>
+                                        Этажность дома
+                                    </option>
                                     <option>до 5 этажей</option>
                                     <option>от 6 этажей</option>
                                     <option>от 10 этажей</option>
@@ -87,7 +111,9 @@ export default function Search() {
                             </li>
                             <li className="search__item">
                                 <select>
-                                    <option value disabled selected>Отопление</option>
+                                    <option value disabled selected>
+                                        Отопление
+                                    </option>
                                     <option>автономное</option>
                                     <option>индивидуальное</option>
                                     <option>централизованное</option>
@@ -97,7 +123,9 @@ export default function Search() {
                         <ul className="search__list">
                             <li className="search__item">
                                 <select>
-                                    <option value disabled selected>Общая площадь</option>
+                                    <option value disabled selected>
+                                        Общая площадь
+                                    </option>
                                     <option>до 25 кв</option>
                                     <option>от 26 до 35 кв</option>
                                     <option>от 36 до 45 кв</option>
@@ -114,7 +142,9 @@ export default function Search() {
                             </li>
                             <li className="search__item">
                                 <select>
-                                    <option value disabled selected>Жилая площадь</option>
+                                    <option value disabled selected>
+                                        Жилая площадь
+                                    </option>
                                     <option>до 20 кв</option>
                                     <option>от 20 до 29 кв</option>
                                     <option>от 30 до 39 кв</option>
@@ -131,7 +161,9 @@ export default function Search() {
                             </li>
                             <li className="search__item">
                                 <select>
-                                    <option value disabled selected>Этаж</option>
+                                    <option value disabled selected>
+                                        Этаж
+                                    </option>
                                     <option>до 5 этажа</option>
                                     <option>от 6 этажа</option>
                                     <option>от 10 этажа</option>
@@ -141,16 +173,20 @@ export default function Search() {
                             </li>
                             <li className="search__item">
                                 <select>
-                                    <option value disabled selected>Ремонт</option>
+                                    <option value disabled selected>
+                                        Ремонт
+                                    </option>
                                     <option>без ремонта</option>
-                                    <option>"бабушкин ремонт"</option>
+                                    <option>&quot;бабушкин ремонт&quot;</option>
                                     <option>евроремонт</option>
                                     <option>дизайнерский ремонт</option>
                                 </select>
                             </li>
                             <li className="search__item">
                                 <select>
-                                    <option value disabled selected>Цена за кв</option>
+                                    <option value disabled selected>
+                                        Цена за кв
+                                    </option>
                                     <option>до 500 $</option>
                                     <option>от 501 до 750 $</option>
                                     <option>от 751 до 1000 $</option>
@@ -176,121 +212,187 @@ export default function Search() {
                     <ul className="search__list-article">
                         <li className="search__item-article">
                             <div className="search__item-slider">
-                                <Image layout='fill' src="/img/new-house-build-img.jpeg"></Image>
+                                <Image layout="fill" src="/img/new-house-build-img.jpeg"></Image>
                             </div>
                             <div className="search__item-info">
                                 <span className="article__price">177 000 $</span>
                                 <span className="article__price-per-square">177 $ за кв.</span>
                                 <span className="article__address">ул. Пушкинская 188</span>
-                                <span className="article__square"><span>30 кв</span><span>27 кв</span></span>
+                                <span className="article__square">
+                                    <span>30 кв</span>
+                                    <span>27 кв</span>
+                                </span>
                                 <div className="article__wrap-details">
                                     <span className="article__rooms">2 комнаты</span>
-                                    <span className="article__floor"><span>11</span> из <span>21</span> этажей</span>
+                                    <span className="article__floor">
+                                        <span>11</span> из <span>21</span> этажей
+                                    </span>
                                     <span className="article__repairs">евроремонт</span>
                                     <span className="article__heating">автономное</span>
                                     <span className="article__year">1995 год</span>
                                     <span className="article__wall">кирпичные</span>
                                 </div>
                                 <div className="article__wrap-btns">
-                                    <Link href="/"><a className="article__link">Подробней</a></Link>
-                                    <Link href="/"><a className="article__share"><i class="fas fa-share"></i></a></Link>
-                                    <span className="article__like"><i class="far fa-heart"></i></span>
+                                    <Link href="/">
+                                        <a className="article__link">Подробней</a>
+                                    </Link>
+                                    <Link href="/">
+                                        <a className="article__share">
+                                            <i className="fas fa-share"></i>
+                                        </a>
+                                    </Link>
+                                    <span className="article__like">
+                                        <i className="far fa-heart"></i>
+                                    </span>
                                 </div>
                             </div>
                         </li>
                         <li className="search__item-article">
                             <div className="search__item-slider">
-                                <Image layout='fill' src="/img/new-house-build-img.jpeg"></Image>
+                                <Image layout="fill" src="/img/new-house-build-img.jpeg"></Image>
                             </div>
                             <div className="search__item-info">
                                 <span className="article__price">177 000 $</span>
                                 <span className="article__price-per-square">177 $ за кв.</span>
                                 <span className="article__address">ул. Пушкинская 188</span>
-                                <span className="article__square"><span>30 кв</span><span>27 кв</span></span>
+                                <span className="article__square">
+                                    <span>30 кв</span>
+                                    <span>27 кв</span>
+                                </span>
                                 <div className="article__wrap-details">
                                     <span className="article__rooms">2 комнаты</span>
-                                    <span className="article__floor"><span>11</span> из <span>21</span> этажей</span>
+                                    <span className="article__floor">
+                                        <span>11</span> из <span>21</span> этажей
+                                    </span>
                                     <span className="article__repairs">евроремонт</span>
                                     <span className="article__heating">автономное</span>
                                     <span className="article__year">1995 год</span>
                                     <span className="article__wall">кирпичные</span>
                                 </div>
                                 <div className="article__wrap-btns">
-                                    <Link href="/"><a className="article__link">Подробней</a></Link>
-                                    <Link href="/"><a className="article__share"><i class="fas fa-share"></i></a></Link>
-                                    <span className="article__like"><i class="far fa-heart"></i></span>
+                                    <Link href="/">
+                                        <a className="article__link">Подробней</a>
+                                    </Link>
+                                    <Link href="/">
+                                        <a className="article__share">
+                                            className <i className="fas fa-share"></i>
+                                        </a>
+                                    </Link>
+                                    <span className="article__like">
+                                        className <i className="far fa-heart"></i>
+                                    </span>
                                 </div>
                             </div>
                         </li>
                         <li className="search__item-article">
                             <div className="search__item-slider">
-                                <Image layout='fill' src="/img/new-house-build-img.jpeg"></Image>
+                                <Image layout="fill" src="/img/new-house-build-img.jpeg"></Image>
                             </div>
                             <div className="search__item-info">
                                 <span className="article__price">177 000 $</span>
                                 <span className="article__price-per-square">177 $ за кв.</span>
                                 <span className="article__address">ул. Пушкинская 188</span>
-                                <span className="article__square"><span>30 кв</span><span>27 кв</span></span>
+                                <span className="article__square">
+                                    <span>30 кв</span>
+                                    <span>27 кв</span>
+                                </span>
                                 <div className="article__wrap-details">
                                     <span className="article__rooms">2 комнаты</span>
-                                    <span className="article__floor"><span>11</span> из <span>21</span> этажей</span>
+                                    <span className="article__floor">
+                                        <span>11</span> из <span>21</span> этажей
+                                    </span>
                                     <span className="article__repairs">евроремонт</span>
                                     <span className="article__heating">автономное</span>
                                     <span className="article__year">1995 год</span>
                                     <span className="article__wall">кирпичные</span>
                                 </div>
                                 <div className="article__wrap-btns">
-                                    <Link href="/"><a className="article__link">Подробней</a></Link>
-                                    <Link href="/"><a className="article__share"><i class="fas fa-share"></i></a></Link>
-                                    <span className="article__like"><i class="far fa-heart"></i></span>
+                                    <Link href="/">
+                                        <a className="article__link">Подробней</a>
+                                    </Link>
+                                    <Link href="/">
+                                        <a className="article__share">
+                                            <i className="fas fa-share"></i>
+                                        </a>
+                                    </Link>
+                                    <span className="article__like">
+                                        <i className="far fa-heart"></i>
+                                    </span>
                                 </div>
                             </div>
-                        </li>ввпип
+                        </li>
+
                         <li className="search__item-article">
                             <div className="search__item-slider">
-                                <Image layout='fill' src="/img/new-house-build-img.jpeg"></Image>
+                                <Image layout="fill" src="/img/new-house-build-img.jpeg"></Image>
                             </div>
                             <div className="search__item-info">
                                 <span className="article__price">177 000 $</span>
                                 <span className="article__price-per-square">177 $ за кв.</span>
                                 <span className="article__address">ул. Пушкинская 188</span>
-                                <span className="article__square"><span>30 кв</span><span>27 кв</span></span>
+                                <span className="article__square">
+                                    <span>30 кв</span>
+                                    <span>27 кв</span>
+                                </span>
                                 <div className="article__wrap-details">
                                     <span className="article__rooms">2 комнаты</span>
-                                    <span className="article__floor"><span>11</span> из <span>21</span> этажей</span>
+                                    <span className="article__floor">
+                                        <span>11</span> из <span>21</span> этажей
+                                    </span>
                                     <span className="article__repairs">евроремонт</span>
                                     <span className="article__heating">автономное</span>
                                     <span className="article__year">1995 год</span>
                                     <span className="article__wall">кирпичные</span>
                                 </div>
                                 <div className="article__wrap-btns">
-                                    <Link href="/"><a className="article__link">Подробней</a></Link>
-                                    <Link href="/"><a className="article__share"><i class="fas fa-share"></i></a></Link>
-                                    <span className="article__like"><i class="far fa-heart"></i></span>
+                                    <Link href="/">
+                                        <a className="article__link">Подробней</a>
+                                    </Link>
+                                    <Link href="/">
+                                        <a className="article__share">
+                                            className <i className="fas fa-share"></i>
+                                        </a>
+                                    </Link>
+                                    <span className="article__like">
+                                        className <i className="far fa-heart"></i>
+                                    </span>
                                 </div>
                             </div>
                         </li>
                         <li className="search__item-article">
                             <div className="search__item-slider">
-                                <Image layout='fill' src="/img/new-house-build-img.jpeg"></Image>
+                                <Image layout="fill" src="/img/new-house-build-img.jpeg"></Image>
                             </div>
                             <div className="search__item-info">
                                 <span className="article__price">177 000 $</span>
                                 <span className="article__price-per-square">177 $ за кв.</span>
                                 <span className="article__address">ул. Пушкинская 188</span>
-                                <span className="article__square"><span>30 кв</span><span>27 кв</span></span>
+                                <span className="article__square">
+                                    <span>30 кв</span>
+                                    <span>27 кв</span>
+                                </span>
                                 <div className="article__wrap-details">
                                     <span className="article__rooms">2 комнаты</span>
-                                    <span className="article__floor"><span>11</span> из <span>21</span> этажей</span>
+                                    <span className="article__floor">
+                                        <span>11</span> из <span>21</span> этажей
+                                    </span>
                                     <span className="article__repairs">евроремонт</span>
                                     <span className="article__heating">автономное</span>
                                     <span className="article__year">1995 год</span>
                                     <span className="article__wall">кирпичные</span>
                                 </div>
                                 <div className="article__wrap-btns">
-                                    <Link href="/"><a className="article__link">Подробней</a></Link>
-                                    <Link href="/"><a className="article__share"><i class="fas fa-share"></i></a></Link>
-                                    <span className="article__like"><i class="far fa-heart"></i></span>
+                                    <Link href="/">
+                                        <a className="article__link">Подробней</a>
+                                    </Link>
+                                    <Link href="/">
+                                        <a className="article__share">
+                                            <i className="fas fa-share"></i>
+                                        </a>
+                                    </Link>
+                                    <span className="article__like">
+                                        <i className="far fa-heart"></i>
+                                    </span>
                                 </div>
                             </div>
                         </li>
@@ -304,8 +406,8 @@ export default function Search() {
                     </ul>
                     <Footer></Footer>
                 </div>
-                <Map/>
+                <Map />
             </section>
         </Layout>
-    )
+    );
 }
