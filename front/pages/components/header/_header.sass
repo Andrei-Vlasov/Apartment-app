@@ -1,0 +1,68 @@
+.header
+    padding: 20px
+    display: flex
+    justify-content: space-between
+    align-items: center
+    position: relative
+    z-index: 99
+
+.header__link-logo
+    display: flex
+    align-items: center
+    
+.header__title
+    margin: 0
+    margin-left: 10px
+    @include font ($TitleFont, 1.5rem, $black)
+
+.header__link-about
+    padding: 12px 14px
+    border-radius: 5px
+    margin-right: 10px
+    transition: all ease-in-out .3s
+    i
+        margin-right: 10px
+    span
+        @include font ($basicFont, 1rem, $black)
+    &:hover
+        background: $white
+
+.header-user__list
+    padding-top: 30px
+    display: none
+    flex-direction: column
+    position: absolute
+    right: 10px
+    top: 60px
+
+.header-user__item
+    background: $blue
+    margin-top: 2px
+    display: flex
+    &:first-child
+        margin-top: 0
+
+.header-user__link
+    width: 100%
+    padding: 15px
+    border: 1px solid transparent
+    transition: all ease-in-out .3s
+    @include font ($basicFont, 1rem, $white)
+    &:hover
+        background: $white
+        border: 1px solid $blue
+        color: $black
+
+.header__link-login
+    width: 42px
+    padding: 12px 14px
+    border-radius: 50%
+    transition: all ease-in-out .3s
+    &:hover
+        background: $white
+
+.header__link-login:hover ~ .header-user__list
+    display: flex
+
+.header-user__list:hover
+    display: flex

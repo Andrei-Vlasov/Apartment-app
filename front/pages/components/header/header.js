@@ -13,7 +13,12 @@ export default function HeaderLayout() {
                 </Link>
                 <div>
                     <Link href="/components/instruction"><a className="header__link-about"><i className="fas fa-plus"></i><span>Розмістити оголошення</span></a></Link>
-                    <Link href="/"><a className="header__link-login"><i className="fas fa-user"></i></a></Link>
+                    <Link href="/components/sing-in"><a className="header__link-login"><i className="fas fa-user"></i></a></Link>
+                    <ul className="header-user__list">
+                        <li className="header-user__item"><Link href="/components/likes"><a className="header-user__link">Понравившиеся</a></Link></li>
+                        <li className="header-user__item"><Link href="/components/create-ad"><a className="header-user__link">Создать обьявления</a></Link></li>
+                        <li className="header-user__item"><Link href="/"><a className="header-user__link">Выход</a></Link></li>
+                    </ul>
                 </div>
             </header>
         </>
