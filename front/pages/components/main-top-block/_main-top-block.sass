@@ -1,0 +1,36 @@
+.main-top-block
+    margin-top: -80px
+    padding: 115px 0 165px 0
+    background: linear-gradient(180deg,#fbfcfd,#e8e9ef)
+
+.main-top-block__title
+    font-weight: 700
+    @include font ($basicFont, 4rem, $black)
+
+.main-top-block__search-form
+    padding: 12px
+    background: $white
+    display: flex
+    flex-direction: column
+    border-radius: 30px
+    width: 35%
+
+.main-top-block__select
+    padding: 12px 30px
+    border-radius: 30px
+    background: $lightGrey
+    border: none
+    margin-top: 12px
+    @include font ($basicFont, 1rem, $darkGrey)
+    &:first-child
+        margin-top: 0
+
+.main-top-block__btn
+    margin-top: 12px
+    padding: 15px
+    border-radius: 30px
+    background: $blue
+    border: none
+    text-align: center
+    @include font ($basicFont, 1rem, $white)
+    text-transform: uppercase

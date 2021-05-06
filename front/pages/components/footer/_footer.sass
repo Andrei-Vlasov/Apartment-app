@@ -1,0 +1,57 @@
+.footer
+    margin-top: 100px
+    background: $blue
+    position: relative
+    padding: 50px 0 15px 0
+    text-align: center
+    &:before
+        content: ""
+        position: absolute
+        left: 0
+        right: 0
+        top: -37px
+        height: 40px
+        background-size: 80px 40px
+        background-image: radial-gradient(circle at 60px -5px, transparent 20px, $blue 21px)
+    &:after
+        content: ""
+        position: absolute
+        left: 0
+        right: 0
+        top: -55px
+        height: 50px
+        background-size: 80px 40px
+        background-image: radial-gradient(circle at 20px 23px, $blue 20px, transparent 21px)
+
+.footer__social-list
+    width: 250px
+    display: flex
+    margin: 0 auto
+    justify-content: space-around
+
+.footer__social-item
+    display: flex
+    width: 30px
+    height: 30px
+    padding: 25px
+    justify-content: center
+    align-items: center
+    border-radius: 50%
+    border: solid 1px $white
+    i
+        color: $white
+        font-size: 1.5rem
+
+.footer__bottom
+    margin-top: 45px
+    position: relative
+    @include font ($basicFont, 1rem, $white)
+    &:after
+        content: ""
+        position: absolute
+        left: 50%
+        top: -15px
+        height: 1px
+        width: 95%
+        transform: translateX(-50%)
+        background: $white
