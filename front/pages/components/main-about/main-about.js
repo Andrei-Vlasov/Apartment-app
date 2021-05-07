@@ -19,7 +19,7 @@ export default function MainAbout() {
                             пропозицій в одному місці.
                         </p>
                         <ul className="main-about__list">
-                            {mainAboutList.map((id, iconClass, title) => (
+                            {mainAboutList.map(({id, iconClass, title}) => (
                                 <li className="main-about__item" key={id}>
                                     <i className={iconClass}></i>
                                     <p className="main-about__item-descr">{title}</p>
