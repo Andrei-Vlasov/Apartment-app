@@ -30,7 +30,7 @@ export default function Info() {
                     <ul className="main-info__list">
                         {infoBlock.map((id, paragraph) => (
                             <li className="main-info__item" key={id}>
-                                <span className="main-info__icon">{id}</span>
+                                <span className="main-info__icon">{toString(id)}</span>
                                 <p>{paragraph}</p>
                             </li>
                         ))}
