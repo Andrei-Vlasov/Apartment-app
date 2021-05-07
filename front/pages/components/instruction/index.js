@@ -4,6 +4,20 @@ import HeaderLayout from '../header/header';
 import Layout from '../layout';
 
 export default function Instruction() {
+    let itemMainBlock = [
+        { id: 1, paragraph: 'Зарегистрируйтесь' },
+        { id: 2, paragraph: 'Убедитесь, что оно соответствует нашим правилам публикации' },
+        { id: 3, paragraph: 'Радуйтесь увеличению количества просмотров объявления и звонков!' },
+    ];
+
+    let itemSubBlock = [
+        { id: 1, paragraph: 'актуальная цена' },
+        { id: 2, paragraph: 'точный адрес (включая номер дома)' },
+        { id: 3, paragraph: 'детальное описани' },
+        { id: 4, paragraph: 'не менее 5 фотографий интерьера' },
+        { id: 5, paragraph: 'размеры не менее чем 500х500 px' },
+    ];
+
     return (
         <Layout>
             <Head>
@@ -18,20 +32,12 @@ export default function Instruction() {
                             сделать:
                         </h1>
                         <ul className="main-instuction__list">
-                            <li className="main-instuction__item">
-                                <span className="main-instuction__icon">1</span>
-                                <p>Зарегистрируйтесь</p>
-                            </li>
-                            <li className="main-instuction__item">
-                                <span className="main-instuction__icon">2</span>
-                                <p>Убедитесь, что оно соответствует нашим правилам публикации</p>
-                            </li>
-                            <li className="main-instuction__item">
-                                <span className="main-instuction__icon">3</span>
-                                <p>
-                                    Радуйтесь увеличению количества просмотров объявления и звонков!
-                                </p>
-                            </li>
+                            {itemMainBlock.map((paragraph, id) => (
+                                <li className="main-instuction__item" key={id}>
+                                    <span className="main-instuction__icon">{id}</span>
+                                    <p>{paragraph}</p>
+                                </li>
+                            ))}
                         </ul>
                     </div>
                 </div>
@@ -41,36 +47,14 @@ export default function Instruction() {
                     <div className="instuction-advice__wrap">
                         <h1 className="instuction-advice__title">Идеальное объявление это:</h1>
                         <ul className="instuction-advice__list">
-                            <li className="instuction-advice__item">
-                                <span className="instuction-advice__icon">
-                                    <i className="fas fa-check-square"></i>
-                                </span>
-                                <p>актуальная цена</p>
-                            </li>
-                            <li className="instuction-advice__item">
-                                <span className="instuction-advice__icon">
-                                    <i className="fas fa-check-square"></i>
-                                </span>
-                                <p>точный адрес (включая номер дома)</p>
-                            </li>
-                            <li className="instuction-advice__item">
-                                <span className="instuction-advice__icon">
-                                    <i className="fas fa-check-square"></i>
-                                </span>
-                                <p>детальное описание</p>
-                            </li>
-                            <li className="instuction-advice__item">
-                                <span className="instuction-advice__icon">
-                                    <i className="fas fa-check-square"></i>
-                                </span>
-                                <p>не менее 5 фотографий интерьера</p>
-                            </li>
-                            <li className="instuction-advice__item">
-                                <span className="instuction-advice__icon">
-                                    <i className="fas fa-check-square"></i>
-                                </span>
-                                <p>размеры не менее чем 500х500 px</p>
-                            </li>
+                            {itemSubBlock.map((id, paragraph) => (
+                                <li className="instuction-advice__item" key={id}>
+                                    <span className="instuction-advice__icon">
+                                        <i className="fas fa-check-square"></i>
+                                    </span>
+                                    <p>{paragraph}</p>
+                                </li>
+                            ))}
                         </ul>
                     </div>
                 </div>
