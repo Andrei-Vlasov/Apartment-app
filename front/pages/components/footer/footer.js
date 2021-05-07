@@ -4,7 +4,7 @@ export default function Footer() {
     let footerSocialLink = [
         { id: 1, link: '', iconClass: 'fab fa-facebook-f' },
         { id: 2, link: '', iconClass: 'fab fa-instagram' },
-        { id: 3, link: '', iconClass: 'fab fa-telegram-plane' },
+        { id: 3, link: '', iconClass: 'fab fa-telegram' },
     ];
 
     return (
