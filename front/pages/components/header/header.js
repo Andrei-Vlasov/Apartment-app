@@ -2,6 +2,24 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 export default function HeaderLayout() {
+    let menu = [
+        {
+            id: 1,
+            link: '/components/likes',
+            title: 'Понравившиеся',
+        },
+        {
+            id: 2,
+            link: '/components/create-ad',
+            title: 'Создать обьявления',
+        },
+        {
+            id: 3,
+            link: '/',
+            title: 'Выход',
+        },
+    ];
+
     return (
         <>
             <header className="header">
@@ -29,21 +47,13 @@ export default function HeaderLayout() {
                         </a>
                     </Link>
                     <ul className="header-user__list">
-                        <li className="header-user__item">
-                            <Link href="/components/likes">
-                                <a className="header-user__link">Понравившиеся</a>
-                            </Link>
-                        </li>
-                        <li className="header-user__item">
-                            <Link href="/components/create-ad">
-                                <a className="header-user__link">Создать обьявления</a>
-                            </Link>
-                        </li>
-                        <li className="header-user__item">
-                            <Link href="/">
-                                <a className="header-user__link">Выход</a>
-                            </Link>
-                        </li>
+                        {menu.map(({ id, link, title }) => (
+                            <li className="header-user__item" key={id}>
+                                <Link href={link}>
+                                    <a className="header-user__link">{title}</a>
+                                </Link>
+                            </li>
+                        ))}
                     </ul>
                 </div>
             </header>
