@@ -14,6 +14,8 @@
     margin: 0
     margin-left: 10px
     @include font ($TitleFont, 1.5rem, $black)
+    @include extraSmallDevice
+        display: none
 
 .header__link-about
     padding: 12px 14px
@@ -25,7 +27,15 @@
     span
         @include font ($basicFont, 1rem, $black)
     &:hover
-        background: $white
+        background: $blue
+        color: $white
+        span 
+            color: $white
+    @include smallDevice 
+        i
+            margin-right: 0
+        span
+            display: none
 
 .header-user__list
     padding-top: 30px
@@ -59,7 +69,8 @@
     border-radius: 50%
     transition: all ease-in-out .3s
     &:hover
-        background: $white
+        background: $blue
+        color: $white
 
 .header__link-login:hover ~ .header-user__list
     display: flex
