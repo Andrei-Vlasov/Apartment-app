@@ -1,4 +1,11 @@
 export default function MainAbout() {
+    let mainAboutList = [
+        { id: 1, iconClass: 'fas fa-list-ul', title: 'усі оголошення на ринку' },
+        { id: 2, iconClass: 'fas fa-layer-group', title: 'дублікати оголошень згруповані' },
+        { id: 3, iconClass: 'fas fa-check', title: 'контроль якості оголошень' },
+        { id: 4, iconClass: 'fas fa-search', title: 'комфортний пошук' },
+    ];
+
     return (
         <>
             <section className="main-about">
@@ -12,24 +19,12 @@ export default function MainAbout() {
                             пропозицій в одному місці.
                         </p>
                         <ul className="main-about__list">
-                            <li className="main-about__item">
-                                <i className="fas fa-list-ul"></i>
-                                <p className="main-about__item-descr">усі оголошення на ринку</p>
-                            </li>
-                            <li className="main-about__item">
-                                <i className="fas fa-layer-group"></i>
-                                <p className="main-about__item-descr">
-                                    дублікати оголошень згруповані
-                                </p>
-                            </li>
-                            <li className="main-about__item">
-                                <i className="fas fa-check"></i>
-                                <p className="main-about__item-descr">контроль якості оголошень</p>
-                            </li>
-                            <li className="main-about__item">
-                                <i className="fas fa-search"></i>
-                                <p className="main-about__item-descr">комфортний пошук</p>
-                            </li>
+                            {mainAboutList.map((id, iconClass, title) => (
+                                <li className="main-about__item" key={id}>
+                                    <i className={iconClass}></i>
+                                    <p className="main-about__item-descr">{title}</p>
+                                </li>
+                            ))}
                         </ul>
                     </div>
                 </div>
