@@ -1,6 +1,12 @@
 .create-ad
     width: 40%
     margin: 0 auto
+    @include largeDevice
+        width: 50%
+    @include mediumDevice
+        width: 80%
+    @include smallDevice
+        width: 90%
 
 .create-ad__title
     position: relative
@@ -40,12 +46,15 @@
         background: $lightGrey
         font-weight: 300
         @include font ($mainFont, 1rem, $black)
+    @include extraSmallDevice
+        width: 100%
+        margin: 0
+        &:nth-child(2n)
+            margin: 0
 
 .create-ad__textarea, .create-ad__btn, .create-ad__input
     margin-top: 10px
-    margin: 0
     width: 100%
-    margin-top: 10px
     border: none
     padding: 15px
     border-radius: 2px
@@ -60,6 +69,13 @@
     &:nth-child(2n)
         margin-right: 0
         margin-left: 5px
+    @include extraSmallDevice
+        width: 100%
+        &:nth-child(2n)
+            margin-right: 0
+            margin-left: 0
+        &:first-child
+            margin: 0
 
 .create-ad__textarea
     resize: none
