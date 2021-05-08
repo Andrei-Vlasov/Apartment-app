@@ -32,7 +32,7 @@ export default function Instruction() {
                             сделать:
                         </h1>
                         <ul className="main-instuction__list">
-                            {itemMainBlock.map((paragraph, id) => (
+                            {itemMainBlock.map(({ paragraph, id }) => (
                                 <li className="main-instuction__item" key={id}>
                                     <span className="main-instuction__icon">{id}</span>
                                     <p>{paragraph}</p>
@@ -47,7 +47,7 @@ export default function Instruction() {
                     <div className="instuction-advice__wrap">
                         <h1 className="instuction-advice__title">Идеальное объявление это:</h1>
                         <ul className="instuction-advice__list">
-                            {itemSubBlock.map((id, paragraph) => (
+                            {itemSubBlock.map(({ id, paragraph }) => (
                                 <li className="instuction-advice__item" key={id}>
                                     <span className="instuction-advice__icon">
                                         <i className="fas fa-check-square"></i>
