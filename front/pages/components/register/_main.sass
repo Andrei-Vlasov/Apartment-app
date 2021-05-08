@@ -1,7 +1,6 @@
 .login
     display: flex
     flex-direction: column
-    height: calc( 100% - 500px )
     margin: 70px auto
     flex: 0 0 auto
     input, button
@@ -17,6 +16,12 @@
         margin-top: 10px
         &:first-child
             margin-top: 0
+    @include largeDevice
+        margin: 50px auto
+    @include mediumDevice
+        margin: 30px auto
+    @include smallDevice
+        margin: 20px auto
 
 .login__title
     position: relative
