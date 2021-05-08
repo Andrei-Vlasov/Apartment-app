@@ -88,7 +88,7 @@ export default function Register() {
                                     <option value disabled selected>
                                         {disabled}
                                     </option>
-                                    {options.map((item, id) => (
+                                    {options.map(({ item, id }) => (
                                         <option key={id}>{item}</option>
                                     ))}
                                 </select>
