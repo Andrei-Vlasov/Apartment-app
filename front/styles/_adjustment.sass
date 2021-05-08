@@ -14,9 +14,7 @@ html, body
 	width: 100%
 	height: 100vh
 	flex-direction: column
-
-.footer
-	flex: 1 0 auto
+	align-content: space-between
 
 ul, ol
 	list-style: none
@@ -51,3 +49,9 @@ h1, h2, h3, h4, h5, h6, p
 	flex-direction: column
 	margin: 0 auto
 	width: 30%
+	@include largeDevice
+		width: 50%
+	@include mediumDevice
+		width: 80%
+	@include smallDevice
+		width: 90%
