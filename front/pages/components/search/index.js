@@ -7,6 +7,267 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 export default function Search() {
+    let items = [
+        {
+            id: 1,
+            images: [
+                { id: 1, src: '/img/new-house-build-img.jpeg' },
+                { id: 2, src: '/img/new-house-build-img.jpeg' },
+            ],
+            price: '177 000',
+            pricePerSquare: '177',
+            address: 'ул. Пушкинская 188',
+            mainSquare: '30',
+            liveSquare: '27',
+            rooms: '2',
+            floor: '5',
+            floorMax: '25',
+            repairs: 'евроремонт',
+            heating: 'автономное',
+            year: '1995',
+            wall: 'кирпичные',
+            link: '/',
+            share: '/',
+        },
+        {
+            id: 2,
+            images: [
+                { id: 1, src: '/img/new-house-build-img.jpeg' },
+                { id: 2, src: '/img/new-house-build-img.jpeg' },
+            ],
+            price: '177 000',
+            pricePerSquare: '177',
+            address: 'ул. Пушкинская 188',
+            mainSquare: '30',
+            liveSquare: '27',
+            rooms: '2',
+            floor: '5',
+            floorMax: '25',
+            repairs: 'евроремонт',
+            heating: 'автономное',
+            year: '1995',
+            wall: 'кирпичные',
+            link: '/',
+            share: '/',
+        },
+        {
+            id: 3,
+            images: [
+                { id: 1, src: '/img/new-house-build-img.jpeg' },
+                { id: 2, src: '/img/new-house-build-img.jpeg' },
+            ],
+            price: '177 000',
+            pricePerSquare: '177',
+            address: 'ул. Пушкинская 188',
+            mainSquare: '30',
+            liveSquare: '27',
+            rooms: '2',
+            floor: '5',
+            floorMax: '25',
+            repairs: 'евроремонт',
+            heating: 'автономное',
+            year: '1995',
+            wall: 'кирпичные',
+            link: '/',
+            share: '/',
+        },
+        {
+            id: 4,
+            images: [
+                { id: 1, src: '/img/new-house-build-img.jpeg' },
+                { id: 2, src: '/img/new-house-build-img.jpeg' },
+            ],
+            price: '177 000',
+            pricePerSquare: '177',
+            address: 'ул. Пушкинская 188',
+            mainSquare: '30',
+            liveSquare: '27',
+            rooms: '2',
+            floor: '5',
+            floorMax: '25',
+            repairs: 'евроремонт',
+            heating: 'автономное',
+            year: '1995',
+            wall: 'кирпичные',
+            link: '/',
+            share: '/',
+        },
+        {
+            id: 5,
+            images: [
+                { id: 1, src: '/img/new-house-build-img.jpeg' },
+                { id: 2, src: '/img/new-house-build-img.jpeg' },
+            ],
+            price: '177 000',
+            pricePerSquare: '177',
+            address: 'ул. Пушкинская 188',
+            mainSquare: '30',
+            liveSquare: '27',
+            rooms: '2',
+            floor: '5',
+            floorMax: '25',
+            repairs: 'евроремонт',
+            heating: 'автономное',
+            year: '1995',
+            wall: 'кирпичные',
+            link: '/',
+            share: '/',
+        },
+    ];
+
+    let selectList1 = [
+        {
+            id: 1,
+            disabled: 'Год постройки',
+            option: [
+                { id: 1, title: '1950-1959' },
+                { id: 2, title: '1960-1969' },
+                { id: 3, title: '1970-1979' },
+                { id: 4, title: '1980-1989' },
+                { id: 5, title: '1990-1999' },
+                { id: 6, title: '2000-2009' },
+                { id: 7, title: '2010-2019' },
+                { id: 8, title: '2020-2021' },
+            ],
+        },
+        {
+            id: 1,
+            disabled: 'Тип дома',
+            option: [
+                { id: 1, title: 'АППС' },
+                { id: 2, title: 'АППС-люкс' },
+                { id: 3, title: 'БСП' },
+                { id: 4, title: 'чешский проект' },
+                { id: 5, title: 'гостинка' },
+                { id: 6, title: 'хрущевка' },
+                { id: 7, title: 'дореволюционный' },
+                { id: 8, title: 'сталинка' },
+            ],
+        },
+        {
+            id: 1,
+            disabled: 'Высота потолка',
+            option: [
+                { id: 1, title: 'от 2.5 м' },
+                { id: 2, title: 'от 2.8 м' },
+                { id: 3, title: 'от 3 м' },
+                { id: 4, title: 'от 3.2 м' },
+                { id: 5, title: 'от 3.5 м' },
+            ],
+        },
+        {
+            id: 1,
+            disabled: 'Стени',
+            option: [
+                { id: 1, title: 'блочные' },
+                { id: 2, title: 'панельные' },
+                { id: 3, title: 'Кирпичные' },
+                { id: 4, title: 'утепленная панель' },
+                { id: 5, title: 'монолитно-каркасные' },
+            ],
+        },
+        {
+            id: 1,
+            disabled: 'Этажность дома',
+            option: [
+                { id: 1, title: 'до 5 этажей' },
+                { id: 2, title: 'от 6 этажей' },
+                { id: 3, title: 'от 10 этажей' },
+                { id: 4, title: 'от 17 этажей' },
+                { id: 5, title: 'от 25 этажей' },
+            ],
+        },
+        {
+            id: 1,
+            disabled: 'Отопление',
+            option: [
+                { id: 1, title: 'автономное' },
+                { id: 2, title: 'индивидуальное' },
+                { id: 3, title: 'централизованное' },
+                { id: 4, title: '1980-1989' },
+                { id: 5, title: '1990-1999' },
+                { id: 6, title: '2000-2009' },
+                { id: 7, title: '2010-2019' },
+                { id: 8, title: '2020-2021' },
+            ],
+        },
+    ];
+
+    let selectList2 = [
+        {
+            id: 1,
+            disabled: 'Общая площадь',
+            option: [
+                { id: 1, title: 'до 25 кв' },
+                { id: 2, title: 'от 26 до 35 кв' },
+                { id: 3, title: 'от 36 до 45 кв' },
+                { id: 4, title: 'от 46 до 55 кв' },
+                { id: 5, title: 'от 56 до 65 кв' },
+                { id: 6, title: 'от 66 до 75 кв' },
+                { id: 7, title: 'от 76 до 85 к' },
+                { id: 8, title: 'от 86 до 95 кв' },
+                { id: 9, title: 'от 96 до 105 кв' },
+                { id: 10, title: 'от 106 до 115 кв' },
+                { id: 11, title: 'от 116 до 125 кв' },
+                { id: 12, title: 'от 126 кв' },
+            ],
+        },
+        {
+            id: 1,
+            disabled: 'Жилая площадь',
+            option: [
+                { id: 1, title: 'до 20 кв' },
+                { id: 2, title: 'от 20 до 29 кв' },
+                { id: 3, title: 'от 30 до 39 кв' },
+                { id: 4, title: 'от 40 до 49 кв' },
+                { id: 5, title: 'от 50 до 59 кв' },
+                { id: 6, title: 'от 60 до 69 кв' },
+                { id: 7, title: 'от 70 до 79 кв' },
+                { id: 8, title: 'от 80 до 89 кв' },
+                { id: 9, title: 'от 90 до 99 кв' },
+                { id: 10, title: 'от 100 до 109 кв' },
+                { id: 11, title: 'от 110 до 119 кв' },
+                { id: 12, title: 'от 120 кв' },
+            ],
+        },
+        {
+            id: 1,
+            disabled: 'Этаж',
+            option: [
+                { id: 1, title: 'до 5 этажа' },
+                { id: 2, title: 'от 6 этажа' },
+                { id: 3, title: 'от 10 этажа' },
+                { id: 4, title: 'от 17 этажа' },
+                { id: 5, title: 'от 25 этажа' },
+            ],
+        },
+        {
+            id: 1,
+            disabled: 'Ремонт',
+            option: [
+                { id: 1, title: 'без ремонта' },
+                { id: 2, title: '"бабушкин ремонт"' },
+                { id: 3, title: 'евроремонт' },
+                { id: 4, title: 'дизайнерский ремонт' },
+            ],
+        },
+        {
+            id: 1,
+            disabled: 'Цена за кв',
+            option: [
+                { id: 1, title: 'до 500 $' },
+                { id: 2, title: 'от 501 до 750 $' },
+                { id: 3, title: 'от 751 до 1000 $' },
+                { id: 4, title: 'от 1001 до 1250 $' },
+                { id: 5, title: 'от 1251 до 1500 $' },
+                { id: 6, title: 'от 1501 до 1750 $' },
+                { id: 7, title: 'от 1751 до 2000 $' },
+                { id: 8, title: 'от 2001 до 2250 $' },
+                { id: 9, title: 'от 2251 $' },
+            ],
+        },
+    ];
+
     return (
         <Layout>
             <Head>
@@ -33,7 +294,7 @@ export default function Search() {
                         </select>
                         <input
                             type="text"
-                            className="sort__price sort__select"
+                            className="sort__price sort__price-first sort__select"
                             placeholder="Цена: от"
                         />
                         <input
@@ -43,161 +304,32 @@ export default function Search() {
                         />
                         <button className="sort__btn">Еще фильтры</button>
                         <ul className="search__list">
-                            <li className="search__item">
-                                <select>
-                                    <option value disabled selected>
-                                        Год постройки
-                                    </option>
-                                    <option>1950-1959</option>
-                                    <option>1960-1969</option>
-                                    <option>1970-1979</option>
-                                    <option>1980-1989</option>
-                                    <option>1990-1999</option>
-                                    <option>2000-2009</option>
-                                    <option>2010-2019</option>
-                                    <option>2020-2021</option>
-                                </select>
-                            </li>
-                            <li className="search__item">
-                                <select>
-                                    <option value disabled selected>
-                                        Год постройки
-                                    </option>
-                                    <option>АППС</option>
-                                    <option>АППС-люкс</option>
-                                    <option>БСП</option>
-                                    <option>чешский проект</option>
-                                    <option>гостинка</option>
-                                    <option>хрущевка</option>
-                                    <option>дореволюционный</option>
-                                    <option>сталинка</option>
-                                </select>
-                            </li>
-                            <li className="search__item">
-                                <select>
-                                    <option value disabled selected>
-                                        Высота потолка
-                                    </option>
-                                    <option>от 2.5 м</option>
-                                    <option>от 2.8 м</option>
-                                    <option>от 3 м</option>
-                                    <option>от 3.2 м</option>
-                                    <option>от 3.5 м</option>
-                                </select>
-                            </li>
-                            <li className="search__item">
-                                <select>
-                                    <option value disabled selected>
-                                        Стени
-                                    </option>
-                                    <option>блочные</option>
-                                    <option>панельные</option>
-                                    <option>Кирпичные</option>
-                                    <option>утепленная панель</option>
-                                    <option>монолитно-каркасные</option>
-                                </select>
-                            </li>
-                            <li className="search__item">
-                                <select>
-                                    <option value disabled selected>
-                                        Этажность дома
-                                    </option>
-                                    <option>до 5 этажей</option>
-                                    <option>от 6 этажей</option>
-                                    <option>от 10 этажей</option>
-                                    <option>от 17 этажей</option>
-                                    <option>от 25 этажей</option>
-                                </select>
-                            </li>
-                            <li className="search__item">
-                                <select>
-                                    <option value disabled selected>
-                                        Отопление
-                                    </option>
-                                    <option>автономное</option>
-                                    <option>индивидуальное</option>
-                                    <option>централизованное</option>
-                                </select>
-                            </li>
+                            {selectList1.map(({ id, disabled, option }) => (
+                                <li className="search__item" key={id}>
+                                    <select>
+                                        <option value disabled selected>
+                                            {disabled}
+                                        </option>
+                                        {option.map(({ id, item }) => (
+                                            <option key={id}>{item}</option>
+                                        ))}
+                                    </select>
+                                </li>
+                            ))}
                         </ul>
                         <ul className="search__list">
-                            <li className="search__item">
-                                <select>
-                                    <option value disabled selected>
-                                        Общая площадь
-                                    </option>
-                                    <option>до 25 кв</option>
-                                    <option>от 26 до 35 кв</option>
-                                    <option>от 36 до 45 кв</option>
-                                    <option>от 46 до 55 кв</option>
-                                    <option>от 56 до 65 кв</option>
-                                    <option>от 66 до 75 кв</option>
-                                    <option>от 76 до 85 кв</option>
-                                    <option>от 86 до 95 кв</option>
-                                    <option>от 96 до 105 кв</option>
-                                    <option>от 106 до 115 кв</option>
-                                    <option>от 116 до 125 кв</option>
-                                    <option>от 126 кв</option>
-                                </select>
-                            </li>
-                            <li className="search__item">
-                                <select>
-                                    <option value disabled selected>
-                                        Жилая площадь
-                                    </option>
-                                    <option>до 20 кв</option>
-                                    <option>от 20 до 29 кв</option>
-                                    <option>от 30 до 39 кв</option>
-                                    <option>от 40 до 49 кв</option>
-                                    <option>от 50 до 59 кв</option>
-                                    <option>от 60 до 69 кв</option>
-                                    <option>от 70 до 79 кв</option>
-                                    <option>от 80 до 89 кв</option>
-                                    <option>от 90 до 99 кв</option>
-                                    <option>от 100 до 109 кв</option>
-                                    <option>от 110 до 119 кв</option>
-                                    <option>от 120 кв</option>
-                                </select>
-                            </li>
-                            <li className="search__item">
-                                <select>
-                                    <option value disabled selected>
-                                        Этаж
-                                    </option>
-                                    <option>до 5 этажа</option>
-                                    <option>от 6 этажа</option>
-                                    <option>от 10 этажа</option>
-                                    <option>от 17 этажа</option>
-                                    <option>от 25 этажа</option>
-                                </select>
-                            </li>
-                            <li className="search__item">
-                                <select>
-                                    <option value disabled selected>
-                                        Ремонт
-                                    </option>
-                                    <option>без ремонта</option>
-                                    <option>&quot;бабушкин ремонт&quot;</option>
-                                    <option>евроремонт</option>
-                                    <option>дизайнерский ремонт</option>
-                                </select>
-                            </li>
-                            <li className="search__item">
-                                <select>
-                                    <option value disabled selected>
-                                        Цена за кв
-                                    </option>
-                                    <option>до 500 $</option>
-                                    <option>от 501 до 750 $</option>
-                                    <option>от 751 до 1000 $</option>
-                                    <option>от 1001 до 1250 $</option>
-                                    <option>от 1251 до 1500 $</option>
-                                    <option>от 1501 до 1750 $</option>
-                                    <option>от 2001 до 1250 $</option>
-                                    <option>от 1501 до 1750 $</option>
-                                    <option>от 2001 $</option>
-                                </select>
-                            </li>
+                            {selectList2.map(({ id, disabled, option }) => (
+                                <li className="search__item" key={id}>
+                                    <select>
+                                        <option value disabled selected>
+                                            {disabled}
+                                        </option>
+                                        {option.map(({ id, item }) => (
+                                            <option key={id}>{item}</option>
+                                        ))}
+                                    </select>
+                                </li>
+                            ))}
                         </ul>
                         <select className="sort__params">
                             <option>Самые дешёвые</option>
@@ -210,192 +342,76 @@ export default function Search() {
                         </select>
                     </form>
                     <ul className="search__list-article">
-                        <li className="search__item-article">
-                            <div className="search__item-slider">
-                                <Image layout="fill" src="/img/new-house-build-img.jpeg"></Image>
-                            </div>
-                            <div className="search__item-info">
-                                <span className="article__price">177 000 $</span>
-                                <span className="article__price-per-square">177 $ за кв.</span>
-                                <span className="article__address">ул. Пушкинская 188</span>
-                                <span className="article__square">
-                                    <span>30 кв</span>
-                                    <span>27 кв</span>
-                                </span>
-                                <div className="article__wrap-details">
-                                    <span className="article__rooms">2 комнаты</span>
-                                    <span className="article__floor">
-                                        <span>11</span> из <span>21</span> этажей
-                                    </span>
-                                    <span className="article__repairs">евроремонт</span>
-                                    <span className="article__heating">автономное</span>
-                                    <span className="article__year">1995 год</span>
-                                    <span className="article__wall">кирпичные</span>
-                                </div>
-                                <div className="article__wrap-btns">
-                                    <Link href="/">
-                                        <a className="article__link">Подробней</a>
-                                    </Link>
-                                    <Link href="/">
-                                        <a className="article__share">
-                                            <i className="fas fa-share"></i>
-                                        </a>
-                                    </Link>
-                                    <span className="article__like">
-                                        <i className="far fa-heart"></i>
-                                    </span>
-                                </div>
-                            </div>
-                        </li>
-                        <li className="search__item-article">
-                            <div className="search__item-slider">
-                                <Image layout="fill" src="/img/new-house-build-img.jpeg"></Image>
-                            </div>
-                            <div className="search__item-info">
-                                <span className="article__price">177 000 $</span>
-                                <span className="article__price-per-square">177 $ за кв.</span>
-                                <span className="article__address">ул. Пушкинская 188</span>
-                                <span className="article__square">
-                                    <span>30 кв</span>
-                                    <span>27 кв</span>
-                                </span>
-                                <div className="article__wrap-details">
-                                    <span className="article__rooms">2 комнаты</span>
-                                    <span className="article__floor">
-                                        <span>11</span> из <span>21</span> этажей
-                                    </span>
-                                    <span className="article__repairs">евроремонт</span>
-                                    <span className="article__heating">автономное</span>
-                                    <span className="article__year">1995 год</span>
-                                    <span className="article__wall">кирпичные</span>
-                                </div>
-                                <div className="article__wrap-btns">
-                                    <Link href="/">
-                                        <a className="article__link">Подробней</a>
-                                    </Link>
-                                    <Link href="/">
-                                        <a className="article__share">
-                                            className <i className="fas fa-share"></i>
-                                        </a>
-                                    </Link>
-                                    <span className="article__like">
-                                        className <i className="far fa-heart"></i>
-                                    </span>
-                                </div>
-                            </div>
-                        </li>
-                        <li className="search__item-article">
-                            <div className="search__item-slider">
-                                <Image layout="fill" src="/img/new-house-build-img.jpeg"></Image>
-                            </div>
-                            <div className="search__item-info">
-                                <span className="article__price">177 000 $</span>
-                                <span className="article__price-per-square">177 $ за кв.</span>
-                                <span className="article__address">ул. Пушкинская 188</span>
-                                <span className="article__square">
-                                    <span>30 кв</span>
-                                    <span>27 кв</span>
-                                </span>
-                                <div className="article__wrap-details">
-                                    <span className="article__rooms">2 комнаты</span>
-                                    <span className="article__floor">
-                                        <span>11</span> из <span>21</span> этажей
-                                    </span>
-                                    <span className="article__repairs">евроремонт</span>
-                                    <span className="article__heating">автономное</span>
-                                    <span className="article__year">1995 год</span>
-                                    <span className="article__wall">кирпичные</span>
-                                </div>
-                                <div className="article__wrap-btns">
-                                    <Link href="/">
-                                        <a className="article__link">Подробней</a>
-                                    </Link>
-                                    <Link href="/">
-                                        <a className="article__share">
-                                            <i className="fas fa-share"></i>
-                                        </a>
-                                    </Link>
-                                    <span className="article__like">
-                                        <i className="far fa-heart"></i>
-                                    </span>
-                                </div>
-                            </div>
-                        </li>
-
-                        <li className="search__item-article">
-                            <div className="search__item-slider">
-                                <Image layout="fill" src="/img/new-house-build-img.jpeg"></Image>
-                            </div>
-                            <div className="search__item-info">
-                                <span className="article__price">177 000 $</span>
-                                <span className="article__price-per-square">177 $ за кв.</span>
-                                <span className="article__address">ул. Пушкинская 188</span>
-                                <span className="article__square">
-                                    <span>30 кв</span>
-                                    <span>27 кв</span>
-                                </span>
-                                <div className="article__wrap-details">
-                                    <span className="article__rooms">2 комнаты</span>
-                                    <span className="article__floor">
-                                        <span>11</span> из <span>21</span> этажей
-                                    </span>
-                                    <span className="article__repairs">евроремонт</span>
-                                    <span className="article__heating">автономное</span>
-                                    <span className="article__year">1995 год</span>
-                                    <span className="article__wall">кирпичные</span>
-                                </div>
-                                <div className="article__wrap-btns">
-                                    <Link href="/">
-                                        <a className="article__link">Подробней</a>
-                                    </Link>
-                                    <Link href="/">
-                                        <a className="article__share">
-                                            className <i className="fas fa-share"></i>
-                                        </a>
-                                    </Link>
-                                    <span className="article__like">
-                                        className <i className="far fa-heart"></i>
-                                    </span>
-                                </div>
-                            </div>
-                        </li>
-                        <li className="search__item-article">
-                            <div className="search__item-slider">
-                                <Image layout="fill" src="/img/new-house-build-img.jpeg"></Image>
-                            </div>
-                            <div className="search__item-info">
-                                <span className="article__price">177 000 $</span>
-                                <span className="article__price-per-square">177 $ за кв.</span>
-                                <span className="article__address">ул. Пушкинская 188</span>
-                                <span className="article__square">
-                                    <span>30 кв</span>
-                                    <span>27 кв</span>
-                                </span>
-                                <div className="article__wrap-details">
-                                    <span className="article__rooms">2 комнаты</span>
-                                    <span className="article__floor">
-                                        <span>11</span> из <span>21</span> этажей
-                                    </span>
-                                    <span className="article__repairs">евроремонт</span>
-                                    <span className="article__heating">автономное</span>
-                                    <span className="article__year">1995 год</span>
-                                    <span className="article__wall">кирпичные</span>
-                                </div>
-                                <div className="article__wrap-btns">
-                                    <Link href="/">
-                                        <a className="article__link">Подробней</a>
-                                    </Link>
-                                    <Link href="/">
-                                        <a className="article__share">
-                                            <i className="fas fa-share"></i>
-                                        </a>
-                                    </Link>
-                                    <span className="article__like">
-                                        <i className="far fa-heart"></i>
-                                    </span>
-                                </div>
-                            </div>
-                        </li>
+                        {items.map(
+                            ({
+                                id,
+                                images,
+                                price,
+                                pricePerSquare,
+                                address,
+                                mainSquare,
+                                liveSquare,
+                                rooms,
+                                floor,
+                                floorMax,
+                                repairs,
+                                heating,
+                                year,
+                                wall,
+                                link,
+                                share,
+                            }) => (
+                                <li className="search__item-article" key={id}>
+                                    <div className="search__item-slider">
+                                        {images.map(({ id, src }) => (
+                                            <Image layout="fill" src={src} key={id}></Image>
+                                        ))}
+                                    </div>
+                                    <div className="search__item-info">
+                                        <span className="article__price">
+                                            <span>{price}</span> <span>$</span>
+                                        </span>
+                                        <span className="article__price-per-square">
+                                            <span>{pricePerSquare}</span> <span>$ за кв.</span>
+                                        </span>
+                                        <span className="article__address">{address}</span>
+                                        <span className="article__square">
+                                            <span>{mainSquare}</span>
+                                            <span>{liveSquare}</span>
+                                        </span>
+                                        <div className="article__wrap-details">
+                                            <span className="article__rooms">
+                                                <span>{rooms}</span>
+                                                <span>комнаты</span>
+                                            </span>
+                                            <span className="article__floor">
+                                                <span>{floor}</span> из <span>{floorMax}</span>{' '}
+                                                этажей
+                                            </span>
+                                            <span className="article__repairs">{repairs}</span>
+                                            <span className="article__heating">{heating}</span>
+                                            <span className="article__year">
+                                                <span>{year}</span> <span>год</span>
+                                            </span>
+                                            <span className="article__wall">{wall}</span>
+                                        </div>
+                                        <div className="article__wrap-btns">
+                                            <Link href={link}>
+                                                <a className="article__link">Подробней</a>
+                                            </Link>
+                                            <Link href={share}>
+                                                <a className="article__share">
+                                                    <i className="fas fa-share"></i>
+                                                </a>
+                                            </Link>
+                                            <span className="article__like">
+                                                <i className="far fa-heart"></i>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </li>
+                            )
+                        )}
                     </ul>
                     <ul className="search__list-pages">
                         <li className="search__item-pages">1</li>
@@ -406,7 +422,9 @@ export default function Search() {
                     </ul>
                     <Footer></Footer>
                 </div>
-                <Map />
+                <div id="mapid">
+                    <Map />
+                </div>
             </section>
         </Layout>
     );
