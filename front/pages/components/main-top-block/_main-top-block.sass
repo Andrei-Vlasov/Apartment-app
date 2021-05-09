@@ -2,10 +2,22 @@
     margin-top: -80px
     padding: 115px 0 165px 0
     background: linear-gradient(180deg,#fbfcfd,#e8e9ef)
+    @include largeDevice
+        padding: 115px 0 145px 0
+
+.main-top-block--container
+    @include mediumDevice 
+        flex-direction: column
+        align-items: center
 
 .main-top-block__title
     font-weight: 700
     @include font ($basicFont, 4rem, $black)
+    @include largeDevice
+        margin-top: 0
+        font-size: 3rem
+    @include mediumDevice 
+        font-size: 2.5rem
 
 .main-top-block__search-form
     padding: 12px
@@ -14,6 +26,13 @@
     flex-direction: column
     border-radius: 30px
     width: 35%
+    @include largeDevice
+        width: 70%
+    @include mediumDevice 
+        width: 100%
+        margin-top: 30px
+    // @include smallDevice
+    //     width: 100%
 
 .main-top-block__select
     padding: 12px 30px
