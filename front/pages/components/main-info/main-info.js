@@ -28,9 +28,9 @@ export default function Info() {
                 <div className="container f-d-c">
                     <h2 className="main-info__title">Економте с Appartment</h2>
                     <ul className="main-info__list">
-                        {infoBlock.map((id, paragraph) => (
+                        {infoBlock.map(({ id, paragraph }) => (
                             <li className="main-info__item" key={id}>
-                                <span className="main-info__icon">{toString(id)}</span>
+                                <span className="main-info__icon">{id}</span>
                                 <p>{paragraph}</p>
                             </li>
                         ))}
