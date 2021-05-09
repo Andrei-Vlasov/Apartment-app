@@ -25,7 +25,28 @@
     &:nth-child(4)
         margin: -175px 0 0 calc( 32% + ((1200px - 96%) / 2) )
     &:nth-child(5)
-        margin: -175px 0 0 0    
+        margin: -175px 0 0 0
+    @include largeDevice 
+        height: 130px 
+        &:nth-child(4)
+            margin: -130px 0 0 calc( 32% + ((700px - 96%) / 2) )
+        &:nth-child(5)
+            margin: -130px 0 0 0
+        &:first-child
+            height: 275px
+    @include mediumDevice 
+        height: 130px 
+        margin-top: 10px
+        width: calc( 50% - 5px )
+        &:nth-child(4)
+            margin: 10px 0 0 0
+        &:nth-child(5)
+            margin: 10px 0 0 0
+        &:first-child
+            height: 130px
+            width: 100%
+    @include extraSmallDevice
+        height: 100px
 
 .main-view-select__link
     position: relative
@@ -39,3 +60,10 @@
     font-weight: 700
     margin: 30px 0 0 30px
     @include font ($basicFont, 1.5rem, $white)
+    @include largeDevice  
+        margin: 15px 0 0 15px
+        font-size: 1.3rem
+    @include smallDevice
+        font-size: 1rem
+    @include extraSmallDevice
+        font-size: 0.8rem
