@@ -1,14 +1,36 @@
 .search-map-wrap
     display: flex
+    @media screen and (max-width: 1040px) 
+        flex-direction: column
     
 .search
     width: 50%
     height: 100vh
     overflow-y: scroll
+    @include largeDevice 
+        width: 65%
+    @media screen and (max-width: 1040px) 
+        height: 60vh
+        width: 100%
 
 #mapid
     width: 50%
     height: 100vh
+    @include largeDevice 
+        width: 35%
+    @media screen and (max-width: 1040px) 
+        position: relative
+        height: 40vh
+        width: 100%
+        &::after
+            content: ''
+            width: 100%
+            height: 10px
+            position: absolute
+            left: 0
+            top: 0
+            background: $blue
+            z-index: 999
 
 .search__sort
     display: flex
@@ -25,10 +47,18 @@
 .sort__search
     width: calc( (((100% - 10px) / 3) * 2) + 5px )
     margin-right: 5px
+    @include smallDevice
+        width: 100%
+        margin-right: 0px
 
 .sort__price
     margin-right: 5px
     margin-top: 5px
+
+.sort__price-first
+    @include smallDevice
+        margin-right: 0px !important
+        margin-left: 5px
 
 .sort__btn
     margin-top: 5px
@@ -36,13 +66,34 @@
     display: flex
     justify-content: center
     padding-right: 15px !important
+    @include smallDevice
+        width: calc( (100% - 10px) / 2 )
+        margin-left: 5px
+    @include extraSmallDevice
+        width: 100%
+        margin: 0
+        margin-top: 5px
 
 .sort__params
     margin-top: 20px
     width: calc( (100% - 10px) / 3 )
+    @include smallDevice
+        width: calc( (100% - 10px) / 2 )
+    @include extraSmallDevice
+        width: 100%
+        margin: 0
+        margin-top: 5px
 
 .sort__select, .search__item
     width: calc( (100% - 10px) / 3 )
+    @include smallDevice
+        width: calc( (100% - 10px) / 2 )
+        margin-right: 5px
+        margin-top: 5px
+    @include extraSmallDevice
+        width: 100%
+        margin: 0
+        margin-top: 5px
 
 .search__list
     margin-top: 15px
@@ -58,6 +109,21 @@
         margin-right: 0
     > select
         width: 100%
+    @include smallDevice
+        width: calc( (100% - 10px) / 2 )
+        &:nth-child(3n)
+            margin-right: 5px
+        &:nth-child(2n)
+            margin-left: 5px
+            margin-right: 0
+    @include extraSmallDevice
+        width: 100%
+        margin: 0
+        margin-top: 5px
+        &:nth-child(2n)
+            margin-left: 0
+        &:nth-child(3n)
+            margin-right: 0
 
 .search__list-article
     display: flex
@@ -85,6 +151,8 @@
             left: 0
             bottom: 0
             background: $lightGrey
+    @include smallDevice
+        flex-direction: column 
 
 .search__item-slider
     position: relative
@@ -92,15 +160,25 @@
     width: 50%
     height: 300px
     margin-right: 15px
+    @include smallDevice
+        width: 100%
+    @include extraSmallDevice
+        height: 200px
 
 .search__item-info
     display: flex
     flex-direction: column
     width: 50%
+    @include smallDevice
+        margin-top: 20px
+        padding: 0 5px
+        width: 100%
 
 .article__price
     font-weight: 700
     @include font ($basicFont, 2rem, $black)
+    @include largeDevice
+        font-size: 1.7rem
 
 .article__price-per-square
     font-weight: 700 
@@ -110,6 +188,8 @@
     margin-top: 20px
     font-weight: 700 
     @include font ($basicFont, 1.2rem, $black)
+    @include largeDevice
+        font-size: 1rem
 
 .article__wrap-details
     display: flex
@@ -145,6 +225,8 @@
 .article__wrap-btns
     display: flex
     margin-top: auto
+    @include smallDevice
+        margin-top: 20px
 
 .article__link
     padding: 12px
