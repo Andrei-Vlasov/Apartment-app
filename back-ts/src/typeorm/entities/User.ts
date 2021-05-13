@@ -9,6 +9,8 @@ export class User {
     @Column({ type: 'date' })
     DateJoined: string;
     @Column()
+    PasswordHash: string;
+    @Column()
     FirstName: string;
     @Column()
     LastName: string;
