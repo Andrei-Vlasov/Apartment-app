@@ -1,8 +1,5 @@
-import HeaderLayout from '../../components/header/header';
-import Footer from '../../components/footer/footer';
 import Map from '../../wrap-map';
 import Layout from '../layout';
-import Head from 'next/head';
 import Link from 'next/link';
 import Image from 'next/image';
 
@@ -26,7 +23,7 @@ export default function Search() {
             heating: 'автономное',
             year: '1995',
             wall: 'кирпичные',
-            link: '/',
+            link: '/post/33',
             share: '/',
         },
         {
@@ -269,163 +266,160 @@ export default function Search() {
     ];
 
     return (
-        <Layout>
-            <Head>
-                <title>Appartment</title>
-            </Head>
+        <>
             <section className="search-map-wrap">
                 <div className="search">
-                    <HeaderLayout></HeaderLayout>
-                    <form className="search__sort">
-                        <input
-                            type="text"
-                            placeholder="Город, улица, станция метро"
-                            className="sort__search"
-                        />
-                        <select className="sort__rooms sort__select">
-                            <option value disabled selected>
-                                Комнат
-                            </option>
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                            <option>5+</option>
-                        </select>
-                        <input
-                            type="text"
-                            className="sort__price sort__price-first sort__select"
-                            placeholder="Цена: от"
-                        />
-                        <input
-                            type="text"
-                            className="sort__price sort__select"
-                            placeholder="Цена: до"
-                        />
-                        <button className="sort__btn">Еще фильтры</button>
-                        <ul className="search__list">
-                            {selectList1.map(({ id, disabled, option }) => (
-                                <li className="search__item" key={id}>
-                                    <select>
-                                        <option value disabled selected>
-                                            {disabled}
-                                        </option>
-                                        {option.map(({ id, item }) => (
-                                            <option key={id}>{item}</option>
-                                        ))}
-                                    </select>
-                                </li>
-                            ))}
-                        </ul>
-                        <ul className="search__list">
-                            {selectList2.map(({ id, disabled, option }) => (
-                                <li className="search__item" key={id}>
-                                    <select>
-                                        <option value disabled selected>
-                                            {disabled}
-                                        </option>
-                                        {option.map(({ id, item }) => (
-                                            <option key={id}>{item}</option>
-                                        ))}
-                                    </select>
-                                </li>
-                            ))}
-                        </ul>
-                        <select className="sort__params">
-                            <option>Самые дешёвые</option>
-                            <option>Самые дорогие</option>
-                            <option>Самые новые</option>
-                            <option>Наибольшая стоймость кв</option>
-                            <option>Наименьшая стоймость кв</option>
-                            <option>Наибольшая площадь</option>
-                            <option>Наименьшая площадь</option>
-                        </select>
-                    </form>
-                    <ul className="search__list-article">
-                        {items.map(
-                            ({
-                                id,
-                                images,
-                                price,
-                                pricePerSquare,
-                                address,
-                                mainSquare,
-                                liveSquare,
-                                rooms,
-                                floor,
-                                floorMax,
-                                repairs,
-                                heating,
-                                year,
-                                wall,
-                                link,
-                                share,
-                            }) => (
-                                <li className="search__item-article" key={id}>
-                                    <div className="search__item-slider">
-                                        {images.map(({ id, src }) => (
-                                            <Image layout="fill" src={src} key={id}></Image>
-                                        ))}
-                                    </div>
-                                    <div className="search__item-info">
-                                        <span className="article__price">
-                                            <span>{price}</span> <span>$</span>
-                                        </span>
-                                        <span className="article__price-per-square">
-                                            <span>{pricePerSquare}</span> <span>$ за кв.</span>
-                                        </span>
-                                        <span className="article__address">{address}</span>
-                                        <span className="article__square">
-                                            <span>{mainSquare}</span>
-                                            <span>{liveSquare}</span>
-                                        </span>
-                                        <div className="article__wrap-details">
-                                            <span className="article__rooms">
-                                                <span>{rooms}</span>
-                                                <span>комнаты</span>
-                                            </span>
-                                            <span className="article__floor">
-                                                <span>{floor}</span> из <span>{floorMax}</span>{' '}
-                                                этажей
-                                            </span>
-                                            <span className="article__repairs">{repairs}</span>
-                                            <span className="article__heating">{heating}</span>
-                                            <span className="article__year">
-                                                <span>{year}</span> <span>год</span>
-                                            </span>
-                                            <span className="article__wall">{wall}</span>
+                    <Layout title='Search Page'>
+                        <form className="search__sort">
+                            <input
+                                type="text"
+                                placeholder="Город, улица, станция метро"
+                                className="sort__search"
+                            />
+                            <select className="sort__rooms sort__select">
+                                <option value disabled selected>
+                                    Комнат
+                                </option>
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5+</option>
+                            </select>
+                            <input
+                                type="text"
+                                className="sort__price sort__price-first sort__select"
+                                placeholder="Цена: от"
+                            />
+                            <input
+                                type="text"
+                                className="sort__price sort__select"
+                                placeholder="Цена: до"
+                            />
+                            <button className="sort__btn">Еще фильтры</button>
+                            <ul className="search__list">
+                                {selectList1.map(({ id, disabled, option }) => (
+                                    <li className="search__item" key={id}>
+                                        <select>
+                                            <option value disabled selected>
+                                                {disabled}
+                                            </option>
+                                            {option.map(({ id, item }) => (
+                                                <option key={id}>{item}</option>
+                                            ))}
+                                        </select>
+                                    </li>
+                                ))}
+                            </ul>
+                            <ul className="search__list">
+                                {selectList2.map(({ id, disabled, option }) => (
+                                    <li className="search__item" key={id}>
+                                        <select>
+                                            <option value disabled selected>
+                                                {disabled}
+                                            </option>
+                                            {option.map(({ id, item }) => (
+                                                <option key={id}>{item}</option>
+                                            ))}
+                                        </select>
+                                    </li>
+                                ))}
+                            </ul>
+                            <select className="sort__params">
+                                <option>Самые дешёвые</option>
+                                <option>Самые дорогие</option>
+                                <option>Самые новые</option>
+                                <option>Наибольшая стоймость кв</option>
+                                <option>Наименьшая стоймость кв</option>
+                                <option>Наибольшая площадь</option>
+                                <option>Наименьшая площадь</option>
+                            </select>
+                        </form>
+                        <ul className="search__list-article">
+                            {items.map(
+                                ({
+                                    id,
+                                    images,
+                                    price,
+                                    pricePerSquare,
+                                    address,
+                                    mainSquare,
+                                    liveSquare,
+                                    rooms,
+                                    floor,
+                                    floorMax,
+                                    repairs,
+                                    heating,
+                                    year,
+                                    wall,
+                                    link,
+                                    share,
+                                }) => (
+                                    <li className="search__item-article" key={id}>
+                                        <div className="search__item-slider">
+                                            {images.map(({ id, src }) => (
+                                                <Image layout="fill" src={src} key={id}></Image>
+                                            ))}
                                         </div>
-                                        <div className="article__wrap-btns">
-                                            <Link href={link}>
-                                                <a className="article__link">Подробней</a>
-                                            </Link>
-                                            <Link href={share}>
-                                                <a className="article__share">
-                                                    <i className="fas fa-share"></i>
-                                                </a>
-                                            </Link>
-                                            <span className="article__like">
-                                                <i className="far fa-heart"></i>
+                                        <div className="search__item-info">
+                                            <span className="article__price">
+                                                <span>{price}</span> <span>$</span>
                                             </span>
+                                            <span className="article__price-per-square">
+                                                <span>{pricePerSquare}</span> <span>$ за кв.</span>
+                                            </span>
+                                            <span className="article__address">{address}</span>
+                                            <span className="article__square">
+                                                <span>{mainSquare}</span>
+                                                <span>{liveSquare}</span>
+                                            </span>
+                                            <div className="article__wrap-details">
+                                                <span className="article__rooms">
+                                                    <span>{rooms}</span>
+                                                    <span>комнаты</span>
+                                                </span>
+                                                <span className="article__floor">
+                                                    <span>{floor}</span> из <span>{floorMax}</span>{' '}
+                                                    этажей
+                                                </span>
+                                                <span className="article__repairs">{repairs}</span>
+                                                <span className="article__heating">{heating}</span>
+                                                <span className="article__year">
+                                                    <span>{year}</span> <span>год</span>
+                                                </span>
+                                                <span className="article__wall">{wall}</span>
+                                            </div>
+                                            <div className="article__wrap-btns">
+                                                <Link href={link}>
+                                                    <a className="article__link">Подробней</a>
+                                                </Link>
+                                                <Link href={share}>
+                                                    <a className="article__share">
+                                                        <i className="fas fa-share"></i>
+                                                    </a>
+                                                </Link>
+                                                <span className="article__like">
+                                                    <i className="far fa-heart"></i>
+                                                </span>
+                                            </div>
                                         </div>
-                                    </div>
-                                </li>
-                            )
-                        )}
-                    </ul>
-                    <ul className="search__list-pages">
-                        <li className="search__item-pages">1</li>
-                        <li className="search__item-pages search__item-pages--active">2</li>
-                        <li className="search__item-pages">3</li>
-                        <li className="search__item-pages">4</li>
-                        <li className="search__item-pages">5</li>
-                    </ul>
-                    <Footer></Footer>
+                                    </li>
+                                )
+                            )}
+                        </ul>
+                        <ul className="search__list-pages">
+                            <li className="search__item-pages">1</li>
+                            <li className="search__item-pages search__item-pages--active">2</li>
+                            <li className="search__item-pages">3</li>
+                            <li className="search__item-pages">4</li>
+                            <li className="search__item-pages">5</li>
+                        </ul>
+                    </Layout>
                 </div>
                 <div id="mapid">
                     <Map />
                 </div>
             </section>
-        </Layout>
+        </>
     );
 }

@@ -1,16 +1,9 @@
-import Head from 'next/head';
-import HeaderLayout from '../header/header';
-import Footer from '../footer/footer';
 import Layout from '../layout';
 import Link from 'next/link';
 
 export default function Register() {
     return (
-        <Layout>
-            <Head>
-                <title>Appartment</title>
-            </Head>
-            <HeaderLayout></HeaderLayout>
+        <Layout title="Register Page">
             <div className="login">
                 <h1 className="login__title">Регистрация</h1>
                 <form className="login__form">
@@ -22,7 +15,6 @@ export default function Register() {
                     <a className="login__link">Войти</a>
                 </Link>
             </div>
-            <Footer></Footer>
         </Layout>
     );
 }

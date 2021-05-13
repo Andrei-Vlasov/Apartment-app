@@ -1,9 +1,6 @@
-import Head from 'next/head';
-import HeaderLayout from '../header/header';
-import Footer from '../footer/footer';
 import Layout from '../layout';
 
-export default function Register() {
+export default function CreateAd() {
     let inputData = [
         { id: 1, placeholder: 'Заголовок' },
         { id: 2, placeholder: 'Комнаты' },
@@ -65,11 +62,7 @@ export default function Register() {
     ];
 
     return (
-        <Layout>
-            <Head>
-                <title>Appartment</title>
-            </Head>
-            <HeaderLayout></HeaderLayout>
+        <Layout title="Create ad Page">
             <div className="create-ad">
                 <h1 className="create-ad__title">Создание обьявления</h1>
                 <form className="create-ad__form">
@@ -100,7 +93,6 @@ export default function Register() {
                     <button className="create-ad__btn">Создать</button>
                 </form>
             </div>
-            <Footer></Footer>
         </Layout>
     );
 }

@@ -1,8 +1,5 @@
-import HeaderLayout from '../../components/header/header';
-import Footer from '../../components/footer/footer';
 import Map from '../../wrap-map';
 import Layout from '../layout';
-import Head from 'next/head';
 import Link from 'next/link';
 import Image from 'next/image';
 
@@ -116,13 +113,10 @@ export default function Search() {
     ];
 
     return (
-        <Layout>
-            <Head>
-                <title>Appartment</title>
-            </Head>
+        <>
             <section className="search-map-wrap">
                 <div className="search">
-                    <HeaderLayout></HeaderLayout>
+                <Layout title="Likes Page">
                     <ul className="search__list-article">
                         {items.map(
                             ({
@@ -202,12 +196,12 @@ export default function Search() {
                         <li className="search__item-pages">4</li>
                         <li className="search__item-pages">5</li>
                     </ul>
-                    <Footer></Footer>
+                    </Layout>
                 </div>
                 <div id="mapid">
                     <Map />
                 </div>
             </section>
-        </Layout>
+        </>
     );
 }

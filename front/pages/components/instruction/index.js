@@ -1,6 +1,3 @@
-import Head from 'next/head';
-import Footer from '../footer/footer';
-import HeaderLayout from '../header/header';
 import Layout from '../layout';
 
 export default function Instruction() {
@@ -19,11 +16,7 @@ export default function Instruction() {
     ];
 
     return (
-        <Layout>
-            <Head>
-                <title>Appartment</title>
-            </Head>
-            <HeaderLayout></HeaderLayout>
+        <Layout title="Instruction Page">
             <section className="main-instuction">
                 <div className="container">
                     <div className="main-instuction__wrap">
@@ -59,7 +52,6 @@ export default function Instruction() {
                     </div>
                 </div>
             </section>
-            <Footer></Footer>
         </Layout>
     );
 }
