@@ -13,7 +13,7 @@
         height: 60vh
         width: 100%
 
-#mapid
+#map
     width: 50%
     height: 100vh
     @include largeDevice 
@@ -64,8 +64,16 @@
     margin-top: 5px
     width: calc( (100% - 10px) / 3 )
     display: flex
+    align-items: center
     justify-content: center
-    padding-right: 15px !important
+    color: $white !important
+    background: $blue !important
+    border: 1px solid transparent !important
+    transition: all ease-in .3s
+    &:hover
+        color: $blue !important
+        background: $white !important
+        border: 1px solid $blue !important
     @include smallDevice
         width: calc( (100% - 10px) / 2 )
         margin-left: 5px
@@ -73,6 +81,12 @@
         width: 100%
         margin: 0
         margin-top: 5px
+
+.search__lists--show
+    display: none
+
+.sort__btn-checkbox:checked ~ .search__lists--show
+    display: block
 
 .sort__params
     margin-top: 20px
@@ -125,6 +139,9 @@
         &:nth-child(3n)
             margin-right: 0
 
+.sort__btn-checkbox
+    display: none
+
 .search__list-article
     display: flex
     flex-direction: column
@@ -153,6 +170,39 @@
             background: $lightGrey
     @include smallDevice
         flex-direction: column 
+
+.slick-list
+    z-index: -1
+
+.slick-slider
+    width: 50%
+    margin-right: 15px
+    @include smallDevice
+        width: 100%
+
+.slick-prev
+    left: 0
+    &:before
+        content: '' !important
+        background: $blue
+        width: 30px
+        height: 50px
+        position: absolute
+        left: 20px
+        top: 50%
+        transform: translateY(-50%)
+
+.slick-next
+    right: 0
+    &:before
+        content: '' !important
+        background: $blue
+        width: 30px
+        height: 50px
+        position: absolute
+        right: 20px
+        top: 50%
+        transform: translateY(-50%)
 
 .search__item-slider
     position: relative
@@ -260,6 +310,7 @@
     padding: 30px 0
     width: 200px
     justify-content: space-between
+    padding-bottom: 100px
 
 .search__item-pages
     width: 30px

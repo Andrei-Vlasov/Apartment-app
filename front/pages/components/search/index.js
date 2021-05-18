@@ -1,4 +1,6 @@
 import Map from '../../wrap-map';
+import React from 'react';
+import Slider from 'react-slick';
 import Layout from '../layout';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -9,9 +11,11 @@ export default function Search() {
             id: 1,
             images: [
                 { id: 1, src: '/img/new-house-build-img.jpeg' },
-                { id: 2, src: '/img/new-house-build-img.jpeg' },
+                { id: 2, src: '/img/house-buy.jpg' },
             ],
             price: '177 000',
+            lat: 50.4378811,
+            long: 30.6050259,
             pricePerSquare: '177',
             address: 'ул. Пушкинская 188',
             mainSquare: '30',
@@ -33,6 +37,8 @@ export default function Search() {
                 { id: 2, src: '/img/new-house-build-img.jpeg' },
             ],
             price: '177 000',
+            lat: 50.4740758,
+            long: 30.4419382,
             pricePerSquare: '177',
             address: 'ул. Пушкинская 188',
             mainSquare: '30',
@@ -54,48 +60,8 @@ export default function Search() {
                 { id: 2, src: '/img/new-house-build-img.jpeg' },
             ],
             price: '177 000',
-            pricePerSquare: '177',
-            address: 'ул. Пушкинская 188',
-            mainSquare: '30',
-            liveSquare: '27',
-            rooms: '2',
-            floor: '5',
-            floorMax: '25',
-            repairs: 'евроремонт',
-            heating: 'автономное',
-            year: '1995',
-            wall: 'кирпичные',
-            link: '/',
-            share: '/',
-        },
-        {
-            id: 4,
-            images: [
-                { id: 1, src: '/img/new-house-build-img.jpeg' },
-                { id: 2, src: '/img/new-house-build-img.jpeg' },
-            ],
-            price: '177 000',
-            pricePerSquare: '177',
-            address: 'ул. Пушкинская 188',
-            mainSquare: '30',
-            liveSquare: '27',
-            rooms: '2',
-            floor: '5',
-            floorMax: '25',
-            repairs: 'евроремонт',
-            heating: 'автономное',
-            year: '1995',
-            wall: 'кирпичные',
-            link: '/',
-            share: '/',
-        },
-        {
-            id: 5,
-            images: [
-                { id: 1, src: '/img/new-house-build-img.jpeg' },
-                { id: 2, src: '/img/new-house-build-img.jpeg' },
-            ],
-            price: '177 000',
+            lat: 50.4510538,
+            long: 30.4598583,
             pricePerSquare: '177',
             address: 'ул. Пушкинская 188',
             mainSquare: '30',
@@ -265,11 +231,19 @@ export default function Search() {
         },
     ];
 
+    const settings = {
+        dots: false,
+        infinite: false,
+        speed: 500,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+    };
+
     return (
         <>
             <section className="search-map-wrap">
                 <div className="search">
-                    <Layout title='Search Page'>
+                    <Layout title="Search Page">
                         <form className="search__sort">
                             <input
                                 type="text"
@@ -296,35 +270,44 @@ export default function Search() {
                                 className="sort__price sort__select"
                                 placeholder="Цена: до"
                             />
-                            <button className="sort__btn">Еще фильтры</button>
-                            <ul className="search__list">
-                                {selectList1.map(({ id, disabled, option }) => (
-                                    <li className="search__item" key={id}>
-                                        <select>
-                                            <option value disabled selected>
-                                                {disabled}
-                                            </option>
-                                            {option.map(({ id, item }) => (
-                                                <option key={id}>{item}</option>
-                                            ))}
-                                        </select>
-                                    </li>
-                                ))}
-                            </ul>
-                            <ul className="search__list">
-                                {selectList2.map(({ id, disabled, option }) => (
-                                    <li className="search__item" key={id}>
-                                        <select>
-                                            <option value disabled selected>
-                                                {disabled}
-                                            </option>
-                                            {option.map(({ id, item }) => (
-                                                <option key={id}>{item}</option>
-                                            ))}
-                                        </select>
-                                    </li>
-                                ))}
-                            </ul>
+                            <input
+                                id="sort__btn"
+                                className="sort__btn-checkbox"
+                                type="checkbox"
+                            ></input>
+                            <label htmlFor="sort__btn" className="sort__btn">
+                                Еще фильтры
+                            </label>
+                            <div className="search__lists--show">
+                                <ul className="search__list">
+                                    {selectList1.map(({ id, disabled, option }) => (
+                                        <li className="search__item" key={id}>
+                                            <select>
+                                                <option value disabled selected>
+                                                    {disabled}
+                                                </option>
+                                                {option.map(({ id, item }) => (
+                                                    <option key={id}>{item}</option>
+                                                ))}
+                                            </select>
+                                        </li>
+                                    ))}
+                                </ul>
+                                <ul className="search__list">
+                                    {selectList2.map(({ id, disabled, option }) => (
+                                        <li className="search__item" key={id}>
+                                            <select>
+                                                <option value disabled selected>
+                                                    {disabled}
+                                                </option>
+                                                {option.map(({ id, item }) => (
+                                                    <option key={id}>{item}</option>
+                                                ))}
+                                            </select>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
                             <select className="sort__params">
                                 <option>Самые дешёвые</option>
                                 <option>Самые дорогие</option>
@@ -355,12 +338,14 @@ export default function Search() {
                                     link,
                                     share,
                                 }) => (
-                                    <li className="search__item-article" key={id}>
-                                        <div className="search__item-slider">
+                                    <li className="search__item-article" value={id} key={id}>
+                                        <Slider {...settings}>
                                             {images.map(({ id, src }) => (
-                                                <Image layout="fill" src={src} key={id}></Image>
+                                                <div className="search__item-slider" key={id}>
+                                                    <Image layout="fill" src={src}></Image>
+                                                </div>
                                             ))}
-                                        </div>
+                                        </Slider>
                                         <div className="search__item-info">
                                             <span className="article__price">
                                                 <span>{price}</span> <span>$</span>
@@ -416,8 +401,8 @@ export default function Search() {
                         </ul>
                     </Layout>
                 </div>
-                <div id="mapid">
-                    <Map />
+                <div id="map">
+                    <Map MarkerItem={items} zoom={8} center={[30.5, 50.5]} page={'search'} />
                 </div>
             </section>
         </>
