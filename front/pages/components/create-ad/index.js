@@ -1,4 +1,5 @@
 import Layout from '../layout';
+import Map from '../../wrap-map';
 
 export default function CreateAd() {
     let inputData = [
@@ -12,6 +13,8 @@ export default function CreateAd() {
         { id: 8, placeholder: 'Общая площадь' },
         { id: 9, placeholder: 'Жилая площадь' },
         { id: 10, placeholder: 'Этаж' },
+        { id: 11, placeholder: 'Контактное лицо' },
+        { id: 12, placeholder: 'Контактный тел.' },
     ];
 
     let selectData = [
@@ -88,7 +91,20 @@ export default function CreateAd() {
                             </li>
                         ))}
                     </ul>
-                    <button className="create-ad__btn">Создать чертеж</button>
+                    <div id="map" className="create__map">
+                        <Map page={'create'} zoom={8} center={[30.5, 50.45]} />
+                    </div>
+                    <input
+                        type="file"
+                        id="create__file"
+                        className="create__file"
+                        accept=".jpg, .jpeg, .png"
+                        placeholder="Загрузить изображение"
+                        multiple
+                    />
+                    <label htmlFor="create__file" className="create__file-style">
+                        Выберите файл
+                    </label>
                     <textarea type="text" placeholder="Описание" className="create-ad__textarea" />
                     <button className="create-ad__btn">Создать</button>
                 </form>

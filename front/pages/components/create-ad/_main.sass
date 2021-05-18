@@ -1,6 +1,7 @@
 .create-ad
     width: 40%
     margin: 0 auto
+    padding-bottom: 100px
     @include largeDevice
         width: 50%
     @include mediumDevice
@@ -61,6 +62,11 @@
     background: $lightGrey
     font-weight: 300
     @include font ($mainFont, 1rem, $black)
+    transition: all ease-in .3s
+
+.create-ad__btn:hover
+    color: $white
+    background: $blue
 
 .create-ad__input
     padding: 15px 25px 15px 15px
@@ -76,6 +82,26 @@
             margin-left: 0
         &:first-child
             margin: 0
+
+.create__map
+    margin-top: 10px
+    width: 100% !important
+    height: 200px !important
+
+.create__file-style
+    cursor: pointer
+    display: flex
+    justify-content: center
+    margin-top: 10px
+    width: 100%
+    padding: 15px
+    border-radius: 2px
+    background: $lightGrey
+    font-weight: 300
+    @include font ($mainFont, 1rem, $black)
+
+.create__file
+    display: none
 
 .create-ad__textarea
     resize: none
