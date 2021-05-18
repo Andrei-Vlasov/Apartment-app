@@ -1,14 +1,52 @@
-import { MapContainer, TileLayer } from 'react-leaflet';
-
-const Map = () => {
-    return (
-        <MapContainer center={[51.505, -0.09]} zoom={13} style={{ height: '100vh', width: '100%' }}>
-            <TileLayer
-                attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-                url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-            />
-        </MapContainer>
-    );
-};
-
-export default Map;
+export default function Map({ MarkerItem, zoom = 12, center, page }) {
+    let mapboxgl = require('mapbox-gl/dist/mapbox-gl.js');
+    mapboxgl.accessToken =
+        'pk.eyJ1IjoiaWxrcmJrIiwiYSI6ImNrb29jbTdndDA4MmwybnN6MGs5YnE0YW8ifQ.gp1OiIKAymjN21_Jf-cgIg';
+    let map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/mapbox/streets-v11',
+        center: center,
+        zoom: zoom,
+    });
+    if (page == 'search') {
+        let item = document.querySelector('.search__list-article');
+        let element = document.querySelectorAll('.search__item-article');
+        var ActiveMarker = new mapboxgl.Marker({ color: '#017CEA' });
+        item.addEventListener('mouseover', (e) => {
+            for (let i = 0; i < e.path.length; i++) {
+                for (let j = 0; j < element.length; j++) {
+                    if (e.path[i] == element[j]) {
+                        ActiveMarker.setLngLat([
+                            MarkerItem[parseInt(e.path[i].attributes[1].value) - 1].long,
+                            MarkerItem[parseInt(e.path[i].attributes[1].value) - 1].lat,
+                        ]);
+                        ActiveMarker.addTo(map);
+                    }
+                }
+            }
+        });
+        item.addEventListener('mouseout', () => {
+            ActiveMarker.remove(map);
+        });
+        for (let i = 0; i < MarkerItem.length; i++) {
+            let el = document.createElement('div');
+            el.className = 'fas fa-dot-circle';
+            el.style.color = '#017CEA';
+            let marker = new mapboxgl.Marker(el);
+            marker.setLngLat([MarkerItem[i].long, MarkerItem[i].lat]);
+            marker.addTo(map);
+        }
+    } else if (page == 'create') {
+        let marker = new mapboxgl.Marker({ draggable: true, color: '#017CEA' })
+            .setLngLat(center)
+            .addTo(map);
+        marker.on('dragend', () => {
+            marker.getLngLat();
+        });
+    } else {
+        let marker = new mapboxgl.Marker();
+        marker.setLngLat([MarkerItem[0].long, MarkerItem[0].lat]);
+        marker.addTo(map);
+    }
+    return <></>;
+}
