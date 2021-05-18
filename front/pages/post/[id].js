@@ -12,8 +12,8 @@ export default function Post() {
     let item = [
         {
             id: 1,
-            name: "Илья",
-            phone: "+380679878736",
+            name: 'Илья',
+            phone: '+380679878736',
             images: [
                 { id: 1, src: '/img/new-house-build-img.jpeg' },
                 { id: 2, src: '/img/house-buy.jpg' },
@@ -87,8 +87,14 @@ export default function Post() {
                         </div>
                     </div>
                     <div className="post__info-user">
-                        <span><i class="fas fa-user"></i><span>{item[0].name}</span></span>
-                        <span><span>{item[0].phone}</span><i className="fas fa-phone"></i></span>
+                        <span>
+                            <i className="fas fa-user"></i>
+                            <span>{item[0].name}</span>
+                        </span>
+                        <span>
+                            <span>{item[0].phone}</span>
+                            <i className="fas fa-phone"></i>
+                        </span>
                     </div>
                     <ul className="post__info">
                         <li>
