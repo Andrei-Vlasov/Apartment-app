@@ -13,7 +13,9 @@ export default function MainAbout() {
                     <div className="main-about__info">
                         <h1 className="main-about__title">Чем мы занимаемся</h1>
                         <p className="main-about__descr">
-                            Appartment - это поисковик недвижимости на вторичном рынке. Мы собираем актуальные объявления, предлагаем нашим пользователям удобный интерфейс для просмотра всех предложений в одном месте.
+                            Appartment - это поисковик недвижимости на вторичном рынке. Мы собираем
+                            актуальные объявления, предлагаем нашим пользователям удобный интерфейс
+                            для просмотра всех предложений в одном месте.
                         </p>
                         <ul className="main-about__list">
                             {mainAboutList.map(({ id, iconClass, title }) => (

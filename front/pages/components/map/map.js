@@ -42,7 +42,7 @@ export default function Map({ MarkerItem, zoom = 12, center, page }) {
             .addTo(map);
         marker.on('dragend', () => {
             let coord = marker.getLngLat();
-            map.setCenter({lat: coord.lat, lng: coord.lng})
+            map.setCenter({ lat: coord.lat, lng: coord.lng });
         });
     } else {
         let marker = new mapboxgl.Marker({ color: '#017CEA' });
