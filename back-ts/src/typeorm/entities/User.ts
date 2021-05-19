@@ -7,5 +7,9 @@ export class Users {
     @Column({ type: 'date' })
     DateJoined: string;
     @Column()
+    Username: string;
+    @Column()
     PasswordHash: string;
+    @Column()
+    IsAdmin: boolean;
 }

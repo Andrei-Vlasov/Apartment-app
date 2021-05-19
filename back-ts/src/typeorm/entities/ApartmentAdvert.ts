@@ -9,13 +9,13 @@ export class ApartmentAdverts {
     @Column({ type: 'date' })
     DateCreated: string;
     @Column()
-    AccommodationType: string;
+    AccommodationType: string; // houses/flats
     @Column()
-    DealType: string;
-    @Column({ type: 'float8' })
-    Global_x: number;
-    @Column({ type: 'float8' })
-    Global_y: number;
+    DealType: string; // rent/buy
+    @Column({ type: 'double precision' })
+    GlobalX: number;
+    @Column({ type: 'double precision' })
+    GlobalY: number;
     @Column({ nullable: true })
     Address: string;
     @Column()
