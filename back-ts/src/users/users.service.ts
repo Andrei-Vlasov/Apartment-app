@@ -15,7 +15,7 @@ export class UsersService {
     }
 
     async createUser(username: string, password: string): Promise<InsertResult> {
-        const passwordHash = await encryptPassword(password, process.env.ENCRYPT_ROUNDS);
+        const passwordHash = await encryptPassword(password);
 
         const dateNow = new Date().toISOString().substr(0, 10);
 
