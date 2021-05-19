@@ -41,3 +41,9 @@ nest-app-es/node_modules
 
 # environment vars
 **.env
+
+# my trying to free run development,
+# everyone can create such folder and try 
+# some scripts on the fly to understand 
+# features of programming language
+**/try-and-check
