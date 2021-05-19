@@ -1,17 +1,18 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import { useRouter } from 'next/router';
 
 export default function HeaderLayout() {
     let menu = [
         {
             id: 1,
-            link: '/components/likes',
-            title: 'Понравившиеся',
+            link: '/components/create-ad',
+            title: 'Создать объявление',
         },
         {
             id: 2,
-            link: '/components/create-ad',
-            title: 'Создать обьявления',
+            link: '/components/user-ad',
+            title: 'Мои объявления',
         },
         {
             id: 3,
@@ -19,6 +20,7 @@ export default function HeaderLayout() {
             title: 'Выход',
         },
     ];
+    let router = useRouter();
 
     return (
         <>
@@ -35,12 +37,14 @@ export default function HeaderLayout() {
                     </a>
                 </Link>
                 <div>
-                    <Link href="/components/instruction">
-                        <a className="header__link-about">
-                            <i className="fas fa-plus"></i>
-                            <span>Розмістити оголошення</span>
-                        </a>
-                    </Link>
+                    {router.asPath != '/components/instruction' && (
+                        <Link href="/components/instruction">
+                            <a className="header__link-about">
+                                <i className="fas fa-plus"></i>
+                                <span>Рекомендации</span>
+                            </a>
+                        </Link>
+                    )}
                     <Link href="/components/sing-in">
                         <a className="header__link-login">
                             <i className="fas fa-user"></i>
