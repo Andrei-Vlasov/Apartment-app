@@ -3,63 +3,58 @@ import Map from '../../wrap-map';
 
 export default function CreateAd() {
     let inputData = [
-        { id: 1, placeholder: 'Заголовок' },
-        { id: 2, placeholder: 'Комнаты' },
-        { id: 3, placeholder: 'Цена' },
-        { id: 4, placeholder: 'Год постройки' },
-        { id: 5, placeholder: 'Цена за кв.' },
-        { id: 6, placeholder: 'Высота потолка' },
-        { id: 7, placeholder: 'Этажность дома' },
-        { id: 8, placeholder: 'Общая площадь' },
-        { id: 9, placeholder: 'Жилая площадь' },
-        { id: 10, placeholder: 'Этаж' },
-        { id: 11, placeholder: 'Контактное лицо' },
-        { id: 12, placeholder: 'Контактный тел.' },
+        { id: 1, placeholder: 'Город, Село' },
+        { id: 2, placeholder: 'Район' },
+        { id: 3, placeholder: 'Улица, Дом' },
+        { id: 4, placeholder: 'Комнаты' },
+        { id: 5, placeholder: 'Цена' },
+        { id: 6, placeholder: 'Год постройки' },
+        { id: 8, placeholder: 'Высота потолка' },
+        { id: 9, placeholder: 'Этажность дома' },
+        { id: 10, placeholder: 'Общая площадь' },
+        { id: 11, placeholder: 'Жилая площадь' },
+        { id: 12, placeholder: 'Этаж' },
+        { id: 14, placeholder: 'Контактное лицо' },
+        { id: 15, placeholder: 'Контактный тел.' },
     ];
 
     let selectData = [
         {
             id: 1,
-            disabled: 'Год постройки',
+            disabled: 'Стены',
             options: [
-                { optionsId: 1, option: 'АППС' },
-                { optionsId: 2, option: 'АППС-люкс' },
-                { optionsId: 3, option: 'БСП' },
-                { optionsId: 4, option: 'чешский проект' },
-                { optionsId: 5, option: 'гостинка' },
-                { optionsId: 6, option: 'хрущевка' },
-                { optionsId: 7, option: 'дореволюционный' },
-                { optionsId: 8, option: 'сталинка' },
+                { optionsId: 1, option: 'Блочные' },
+                { optionsId: 2, option: 'Панельные' },
+                { optionsId: 3, option: 'Кирпичные' },
+                { optionsId: 4, option: 'Утепленная панель' },
+                { optionsId: 5, option: 'Монолитно-каркасные' },
             ],
         },
         {
             id: 2,
-            disabled: 'Стени',
+            disabled: 'Отопление',
             options: [
-                { optionsId: 1, option: 'блочные' },
-                { optionsId: 2, option: 'панельные' },
-                { optionsId: 3, option: 'Кирпичные' },
-                { optionsId: 4, option: 'утепленная панель' },
-                { optionsId: 5, option: 'монолитно-каркасные' },
+                { optionsId: 1, option: 'Автономное' },
+                { optionsId: 2, option: 'Индивидуальное' },
+                { optionsId: 3, option: 'Централизованное' },
             ],
         },
         {
             id: 3,
-            disabled: 'Отопление',
+            disabled: 'Ремонт',
             options: [
-                { optionsId: 1, option: 'автономное' },
-                { optionsId: 2, option: 'индивидуальное' },
-                { optionsId: 3, option: 'централизованное' },
+                { optionsId: 1, option: 'Без ремонта' },
+                { optionsId: 2, option: '"Бабушкин ремонт"' },
+                { optionsId: 3, option: 'Евроремонт' },
+                { optionsId: 4, option: 'Дизайнерский ремонт' },
             ],
         },
         {
             id: 4,
-            disabled: 'Ремонт',
+            disabled: 'Тип жилья',
             options: [
-                { optionsId: 1, option: 'без ремонта' },
-                { optionsId: 2, option: '"бабушкин ремонт"' },
-                { optionsId: 3, option: 'евроремонт' },
-                { optionsId: 4, option: 'дизайнерский ремонт' },
+                { optionsId: 1, option: 'Квартира' },
+                { optionsId: 2, option: 'Дом' },
             ],
         },
     ];
@@ -67,7 +62,7 @@ export default function CreateAd() {
     return (
         <Layout title="Create ad Page">
             <div className="create-ad">
-                <h1 className="create-ad__title">Создание обьявления</h1>
+                <h1 className="create-ad__title">Создание объявления</h1>
                 <form className="create-ad__form">
                     {inputData.map(({ placeholder, id }) => (
                         <input
@@ -84,8 +79,8 @@ export default function CreateAd() {
                                     <option value disabled selected>
                                         {disabled}
                                     </option>
-                                    {options.map(({ item, id }) => (
-                                        <option key={id}>{item}</option>
+                                    {options.map(({ option, optionsId }) => (
+                                        <option key={optionsId}>{option}</option>
                                     ))}
                                 </select>
                             </li>

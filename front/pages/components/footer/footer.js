@@ -21,7 +21,7 @@ export default function Footer() {
                         </li>
                     ))}
                 </ul>
-                <div className="footer__bottom">© flatfy.ua 2015-2021</div>
+                <div className="footer__bottom">© Appartment 2021</div>
             </footer>
         </>
     );

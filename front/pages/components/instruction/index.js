@@ -10,9 +10,9 @@ export default function Instruction() {
     let itemSubBlock = [
         { id: 1, paragraph: 'актуальная цена' },
         { id: 2, paragraph: 'точный адрес (включая номер дома)' },
-        { id: 3, paragraph: 'детальное описани' },
+        { id: 3, paragraph: 'детальное описание' },
         { id: 4, paragraph: 'не менее 5 фотографий интерьера' },
-        { id: 5, paragraph: 'размеры не менее чем 500х500 px' },
+        { id: 5, paragraph: 'размеры фото не менее 500х500 px' },
     ];
 
     return (
@@ -21,7 +21,7 @@ export default function Instruction() {
                 <div className="container">
                     <div className="main-instuction__wrap">
                         <h1 className="main-instuction__title">
-                            Хотите, чтобы ваше объявление появилось на Flatfy? Вот что нужно
+                            Хотите, чтобы ваше объявление появилось на Appartment? Вот что нужно
                             сделать:
                         </h1>
                         <ul className="main-instuction__list">
@@ -38,7 +38,7 @@ export default function Instruction() {
             <section className="instuction-advice">
                 <div className="container">
                     <div className="instuction-advice__wrap">
-                        <h1 className="instuction-advice__title">Идеальное объявление это:</h1>
+                        <h1 className="instuction-advice__title">Идеальное объявление - это:</h1>
                         <ul className="instuction-advice__list">
                             {itemSubBlock.map(({ id, paragraph }) => (
                                 <li className="instuction-advice__item" key={id}>

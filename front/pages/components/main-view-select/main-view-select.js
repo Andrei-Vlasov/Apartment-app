@@ -3,11 +3,11 @@ import Image from 'next/image';
 
 export default function MainViewSelect() {
     let item = [
-        { id: 1, title: 'Новобудови', imgSrc: '/img/new-house-build-img.jpeg', link: '/' },
-        { id: 2, title: 'Оренда квартир', imgSrc: '/img/flat-rent.jpg', link: '/' },
-        { id: 3, title: 'Оренда будинків', imgSrc: '/img/house-rent.jpg', link: '/' },
-        { id: 4, title: 'Продаж квартир', imgSrc: '/img/flat-buy.jpg', link: '/' },
-        { id: 5, title: 'Продаж будинків', imgSrc: '/img/house-buy.jpg', link: '/' },
+        { id: 1, title: 'Новостройки', imgSrc: '/img/new-house-build-img.jpeg', link: '/' },
+        { id: 2, title: 'Аренда квартир', imgSrc: '/img/flat-rent.jpg', link: '/' },
+        { id: 3, title: 'Аренда домов', imgSrc: '/img/house-rent.jpg', link: '/' },
+        { id: 4, title: 'Продажа квартир', imgSrc: '/img/flat-buy.jpg', link: '/' },
+        { id: 5, title: 'Продажа домов', imgSrc: '/img/house-buy.jpg', link: '/' },
     ];
 
     return (

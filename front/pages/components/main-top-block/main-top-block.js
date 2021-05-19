@@ -5,22 +5,22 @@ export default function MainTopBlock() {
         <>
             <section className="main-top-block">
                 <div className="container j-c-s-a main-top-block--container">
-                    <h1 className="main-top-block__title">Шукай з нами</h1>
+                    <h1 className="main-top-block__title">Ищи с нами</h1>
                     <form className="main-top-block__search-form">
                         <select className="main-top-block__select">
-                            <option>Продаж квартир</option>
-                            <option>Оренда квартир</option>
-                            <option>Продаж будинків</option>
-                            <option>Оренда будинків</option>
+                            <option>Продажа квартир</option>
+                            <option>Аренда квартир</option>
+                            <option>Продажа домов</option>
+                            <option>Аренда домов</option>
                         </select>
                         <select className="main-top-block__select">
-                            <option>Київ</option>
-                            <option>Одеса</option>
-                            <option>Львів</option>
-                            <option>Харків</option>
+                            <option>Киев</option>
+                            <option>Одесса</option>
+                            <option>Львов</option>
+                            <option>Харьков</option>
                         </select>
                         <Link href="/components/search">
-                            <a className="main-top-block__btn">пошук</a>
+                            <a className="main-top-block__btn">Поиск</a>
                         </Link>
                     </form>
                 </div>
