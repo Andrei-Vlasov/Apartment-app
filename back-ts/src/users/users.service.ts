@@ -2,7 +2,7 @@ import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { encryptPassword } from 'src/security/encrypt';
 import { Users } from 'src/typeorm';
-import { Repository } from 'typeorm';
+import { InsertResult, Repository } from 'typeorm';
 
 @Injectable()
 export class UsersService {
@@ -14,7 +14,7 @@ export class UsersService {
         return user;
     }
 
-    async createUser(username, password) {
+    async createUser(username: string, password: string): Promise<InsertResult> {
         const passwordHash = await encryptPassword(password, process.env.ENCRYPT_ROUNDS);
 
         const dateNow = new Date().toISOString().substr(0, 10);
