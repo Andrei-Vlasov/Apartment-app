@@ -81,9 +81,6 @@ export default function Post() {
                                     <i className="fas fa-share"></i>
                                 </a>
                             </Link>
-                            <span className="post__like">
-                                <i className="far fa-heart"></i>
-                            </span>
                         </div>
                     </div>
                     <div className="post__info-user">
