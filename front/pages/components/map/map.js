@@ -41,10 +41,11 @@ export default function Map({ MarkerItem, zoom = 12, center, page }) {
             .setLngLat(center)
             .addTo(map);
         marker.on('dragend', () => {
-            marker.getLngLat();
+            let coord = marker.getLngLat();
+            map.setCenter({lat: coord.lat, lng: coord.lng})
         });
     } else {
-        let marker = new mapboxgl.Marker();
+        let marker = new mapboxgl.Marker({ color: '#017CEA' });
         marker.setLngLat([MarkerItem[0].long, MarkerItem[0].lat]);
         marker.addTo(map);
     }
