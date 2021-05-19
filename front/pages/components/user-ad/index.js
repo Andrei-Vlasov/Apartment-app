@@ -78,6 +78,137 @@ export default function Search() {
         },
     ];
 
+    let selectList1 = [
+        {
+            id: 1,
+            disabled: 'Год постройки',
+            option: [
+                { id: 1, title: '1950-1959' },
+                { id: 2, title: '1960-1969' },
+                { id: 3, title: '1970-1979' },
+                { id: 4, title: '1980-1989' },
+                { id: 5, title: '1990-1999' },
+                { id: 6, title: '2000-2009' },
+                { id: 7, title: '2010-2019' },
+                { id: 8, title: '2020-2021' },
+            ],
+        },
+        {
+            id: 1,
+            disabled: 'Высота потолка',
+            option: [
+                { id: 1, title: 'от 2.5 м' },
+                { id: 2, title: 'от 2.8 м' },
+                { id: 3, title: 'от 3 м' },
+                { id: 4, title: 'от 3.2 м' },
+                { id: 5, title: 'от 3.5 м' },
+            ],
+        },
+        {
+            id: 1,
+            disabled: 'Стены',
+            option: [
+                { id: 1, title: 'Блочные' },
+                { id: 2, title: 'Панельные' },
+                { id: 3, title: 'Кирпичные' },
+                { id: 4, title: 'Утепленная панель' },
+                { id: 5, title: 'Монолитно-каркасные' },
+            ],
+        },
+        {
+            id: 1,
+            disabled: 'Этажность дома',
+            option: [
+                { id: 1, title: 'до 5 этажей' },
+                { id: 2, title: 'от 6 этажей' },
+                { id: 3, title: 'от 10 этажей' },
+                { id: 4, title: 'от 17 этажей' },
+                { id: 5, title: 'от 25 этажей' },
+            ],
+        },
+        {
+            id: 1,
+            disabled: 'Отопление',
+            option: [
+                { id: 1, title: 'Автономное' },
+                { id: 2, title: 'Индивидуальное' },
+                { id: 3, title: 'Централизованное' },
+            ],
+        },
+        {
+            id: 1,
+            disabled: 'Общая площадь',
+            option: [
+                { id: 1, title: 'до 25 кв.м' },
+                { id: 2, title: 'от 26 до 35 кв.м' },
+                { id: 3, title: 'от 36 до 45 кв.м' },
+                { id: 4, title: 'от 46 до 55 кв.м' },
+                { id: 5, title: 'от 56 до 65 кв.м' },
+                { id: 6, title: 'от 66 до 75 кв.м' },
+                { id: 7, title: 'от 76 до 85 кв.м' },
+                { id: 8, title: 'от 86 до 95 кв.м' },
+                { id: 9, title: 'от 96 до 105 кв.м' },
+                { id: 10, title: 'от 106 до 115 кв.м' },
+                { id: 11, title: 'от 116 до 125 кв.м' },
+                { id: 12, title: 'от 126 кв.м' },
+            ],
+        },
+        {
+            id: 1,
+            disabled: 'Жилая площадь',
+            option: [
+                { id: 1, title: 'до 20 кв.м' },
+                { id: 2, title: 'от 20 до 29 кв.м' },
+                { id: 3, title: 'от 30 до 39 кв.м' },
+                { id: 4, title: 'от 40 до 49 кв.м' },
+                { id: 5, title: 'от 50 до 59 кв.м' },
+                { id: 6, title: 'от 60 до 69 кв.м' },
+                { id: 7, title: 'от 70 до 79 кв.м' },
+                { id: 8, title: 'от 80 до 89 кв.м' },
+                { id: 9, title: 'от 90 до 99 кв.м' },
+                { id: 10, title: 'от 100 до 109 кв.м' },
+                { id: 11, title: 'от 110 до 119 кв.м' },
+                { id: 12, title: 'от 120 кв.м' },
+            ],
+        },
+        {
+            id: 1,
+            disabled: 'Этаж',
+            option: [
+                { id: 1, title: 'до 5 этажа' },
+                { id: 2, title: 'от 6 этажа' },
+                { id: 3, title: 'от 10 этажа' },
+                { id: 4, title: 'от 17 этажа' },
+                { id: 5, title: 'от 25 этажа' },
+            ],
+        },
+        {
+            id: 1,
+            disabled: 'Ремонт',
+            option: [
+                { id: 1, title: 'Без ремонта' },
+                { id: 2, title: '"Бабушкин ремонт"' },
+                { id: 3, title: 'Евроремонт' },
+                { id: 4, title: 'Дизайнерский ремонт' },
+            ],
+        },
+        {
+            id: 1,
+            disabled: 'Цена за кв.м',
+            option: [
+                { id: 1, title: 'до 500 $' },
+                { id: 2, title: 'от 501 до 750 $' },
+                { id: 3, title: 'от 751 до 1000 $' },
+                { id: 4, title: 'от 1001 до 1250 $' },
+                { id: 5, title: 'от 1251 до 1500 $' },
+                { id: 6, title: 'от 1501 до 1750 $' },
+                { id: 7, title: 'от 1751 до 2000 $' },
+                { id: 8, title: 'от 2001 до 2250 $' },
+                { id: 9, title: 'от 2251 $' },
+            ],
+        },
+    ];
+
     const settings = {
         dots: false,
         infinite: false,
@@ -90,7 +221,7 @@ export default function Search() {
         <>
             <section className="search-map-wrap">
                 <div className="search">
-                    <Layout title="Likes Page">
+                    <Layout title="Search Page">
                         <ul className="search__list-article">
                             {items.map(
                                 ({
@@ -156,9 +287,6 @@ export default function Search() {
                                                         <i className="fas fa-share"></i>
                                                     </a>
                                                 </Link>
-                                                <span className="article__like">
-                                                    <i className="far fa-heart"></i>
-                                                </span>
                                             </div>
                                         </div>
                                     </li>
