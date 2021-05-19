@@ -5,17 +5,31 @@ export class ApartmentAdvert {
     @PrimaryGeneratedColumn()
     AdvertID: number;
     @Column()
-    authorID: number;
-    @Column()
+    AuthorID: number;
+    @Column({ type: 'date' })
     DateCreated: string;
     @Column()
-    DealType: number;
+    AccommodationType: string;
     @Column()
-    LocationData: string;
+    DealType: string;
+    @Column({ type: 'float8' })
+    Global_x: number;
+    @Column({ type: 'float8' })
+    Global_y: number;
+    @Column({ nullable: true })
+    Address: string;
+    @Column()
+    LocalityID: number;
+    @Column()
+    AreaID: number;
+    @Column()
+    RegionID: number;
     @Column()
     Price: number;
+    @Column({ nullable: true, type: 'text' })
+    Description: string;
     @Column()
-    Title: string;
+    ContactInfo: string;
     @Column()
     RoomCount: number;
     @Column()
