@@ -1,5 +1,5 @@
 export default function Map({ MarkerItem, zoom = 12, center, page }) {
-    let mapboxgl = require('mapbox-gl/dist/mapbox-gl.js');
+    const mapboxgl = require('mapbox-gl/dist/mapbox-gl.js');
     mapboxgl.accessToken =
         'pk.eyJ1IjoiaWxrcmJrIiwiYSI6ImNrb29jbTdndDA4MmwybnN6MGs5YnE0YW8ifQ.gp1OiIKAymjN21_Jf-cgIg';
     let map = new mapboxgl.Map({
@@ -9,9 +9,9 @@ export default function Map({ MarkerItem, zoom = 12, center, page }) {
         zoom: zoom,
     });
     if (page == 'search') {
-        let item = document.querySelector('.search__list-article');
-        let element = document.querySelectorAll('.search__item-article');
-        var ActiveMarker = new mapboxgl.Marker({ color: '#017CEA' });
+        const item = document.querySelector('.search__list-article');
+        const element = document.querySelectorAll('.search__item-article');
+        const ActiveMarker = new mapboxgl.Marker({ color: '#017CEA' });
         item.addEventListener('mouseover', (e) => {
             for (let i = 0; i < e.path.length; i++) {
                 for (let j = 0; j < element.length; j++) {
