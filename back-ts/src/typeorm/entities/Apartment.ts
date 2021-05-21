@@ -1,9 +1,9 @@
 import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity()
-export class ApartmentAdverts {
+export class Apartments {
     @PrimaryGeneratedColumn()
-    AdvertID: number;
+    ApartmentID: number;
     @Column()
     AuthorID: number;
     @Column({ type: 'date' })

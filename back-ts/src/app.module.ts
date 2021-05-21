@@ -1,5 +1,5 @@
 import { Module } from '@nestjs/common';
-import { ApartmentModule } from './apartment/apartment.module';
+import { ApartmentsModule } from './apartments/apartments.module';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
@@ -23,7 +23,7 @@ import { AuthService } from './auth/auth.service';
             entities: entities,
             synchronize: true,
         }),
-        ApartmentModule,
+        ApartmentsModule,
         AuthModule,
         UsersModule,
     ],

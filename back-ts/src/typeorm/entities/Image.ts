@@ -5,7 +5,7 @@ export class Images {
     @PrimaryGeneratedColumn()
     ImageID: number;
     @Column()
-    AdvertID: number;
+    ApartmentID: number;
     @Column()
     Filename: string;
 }

@@ -1,7 +1,7 @@
-import { ApartmentAdverts } from './entities/ApartmentAdvert';
+import { Apartments } from './entities/Apartment';
 import { Users } from './entities/User';
 import { Images } from './entities/Image';
 
-export const entities = [ApartmentAdverts, Users, Images];
+export const entities = [Apartments, Users, Images];
 
-export { ApartmentAdverts, Users, Images };
+export { Apartments, Users, Images };
