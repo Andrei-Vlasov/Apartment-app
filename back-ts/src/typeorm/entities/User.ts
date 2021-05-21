@@ -2,7 +2,7 @@ import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity()
 export class Users {
-    @PrimaryGeneratedColumn()
+    @PrimaryGeneratedColumn('increment')
     UserID: number;
     @Column({ type: 'date' })
     DateJoined: string;

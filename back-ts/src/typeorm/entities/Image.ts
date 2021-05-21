@@ -2,7 +2,7 @@ import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity()
 export class Images {
-    @PrimaryGeneratedColumn()
+    @PrimaryGeneratedColumn('increment')
     ImageID: number;
     @Column()
     ApartmentID: number;

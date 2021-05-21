@@ -2,7 +2,7 @@ import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity()
 export class Apartments {
-    @PrimaryGeneratedColumn()
+    @PrimaryGeneratedColumn('increment')
     ApartmentID: number;
     @Column()
     AuthorID: number;
