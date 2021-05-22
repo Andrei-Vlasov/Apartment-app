@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Apartments } from 'src/typeorm';
-import { Repository } from 'typeorm';
+import { DeleteResult, Repository } from 'typeorm';
 
 @Injectable()
 export class ApartmentsService {
@@ -21,5 +21,12 @@ export class ApartmentsService {
         });
 
         return apartment;
+    }
+    async deleteApartment(ApartmentID: string): Promise<DeleteResult | undefined> {
+        const result = await this.apartmentsRepository.delete({
+            ApartmentID: Number(ApartmentID),
+        });
+
+        return result;
     }
 }

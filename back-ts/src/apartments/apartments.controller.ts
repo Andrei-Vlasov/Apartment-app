@@ -1,4 +1,4 @@
-import { Controller, Get, Param } from '@nestjs/common';
+import { Controller, Get, Delete, Param } from '@nestjs/common';
 import { ApartmentsService } from './apartments.service';
 
 @Controller('apartments')
@@ -14,6 +14,12 @@ export class ApartmentsController {
     @Get(':id')
     async findByID(@Param('id') apartmentID: string) {
         const result = await this.apartmentsService.findApartmentByID(apartmentID);
+
+        return result;
+    }
+    @Delete(':id')
+    async delete(@Param('id') apartmentID: string) {
+        const result = await this.apartmentsService.deleteApartment(apartmentID);
 
         return result;
     }
