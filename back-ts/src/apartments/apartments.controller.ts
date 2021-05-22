@@ -5,6 +5,12 @@ import { ApartmentsService } from './apartments.service';
 export class ApartmentsController {
     constructor(private readonly apartmentsService: ApartmentsService) {}
 
+    @Get()
+    async getAll() {
+        const result = await this.apartmentsService.getAllApartments();
+
+        return result;
+    }
     @Get(':id')
     async findByID(@Param('id') apartmentID: string) {
         const result = await this.apartmentsService.findApartmentByID(apartmentID);

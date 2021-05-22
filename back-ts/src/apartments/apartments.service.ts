@@ -9,6 +9,12 @@ export class ApartmentsService {
         @InjectRepository(Apartments) private readonly apartmentsRepository: Repository<Apartments>
     ) {}
 
+    async getAllApartments(): Promise<Apartments[] | undefined> {
+        const apartments = await this.apartmentsRepository.find({});
+
+        return apartments;
+    }
+
     async findApartmentByID(ApartmentID: string): Promise<Apartments | undefined> {
         const apartment = await this.apartmentsRepository.findOne({
             ApartmentID: Number(ApartmentID),
