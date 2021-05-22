@@ -1,14 +1,14 @@
 import { Module } from '@nestjs/common';
-import { ApartmentsModule } from './apartments/apartments.module';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { ConfigModule } from '@nestjs/config';
 import { entities } from './typeorm';
-import { AuthModule } from './auth/auth.module';
 import { UsersModule } from './users/users.module';
+import { AuthModule } from './auth/auth.module';
 import { AuthController } from './auth/auth.controller';
 import { AuthService } from './auth/auth.service';
+import { ApartmentsModule } from './apartments/apartments.module';
 
 @Module({
     imports: [
