@@ -15,11 +15,11 @@ export class CreateDto {
     RoomCount: number;
     Space: number;
     LivingSpace: number;
-    Height: number;
-    Floor: number;
-    TotalFloors: number;
-    YearBuilt: number;
-    Condition: string;
-    Heating: string;
-    Walls: string;
+    Height?: number;
+    Floor?: number;
+    TotalFloors?: number;
+    YearBuilt?: number;
+    Condition?: string;
+    Heating?: string;
+    Walls?: string;
 }
