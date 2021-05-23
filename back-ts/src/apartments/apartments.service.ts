@@ -10,23 +10,7 @@ export class ApartmentsService {
         @InjectRepository(Apartments) private readonly apartmentsRepository: Repository<Apartments>
     ) {}
     async createApartment(createDto: CreateDto): Promise<Apartments | undefined> {
-        const apartment = new Apartments();
-        apartment.AuthorID = createDto.AuthorID;
-        apartment.DateCreated = createDto.DateCreated;
-        apartment.AccommodationType = createDto.AccommodationType;
-        apartment.DealType = createDto.DealType;
-        apartment.GlobalX = createDto.GlobalX;
-        apartment.GlobalY = createDto.GlobalY;
-        apartment.Address = createDto.Address;
-        apartment.LocalityID = createDto.LocalityID;
-        apartment.AreaID = createDto.AreaID;
-        apartment.RegionID = createDto.RegionID;
-        apartment.Price = createDto.Price;
-        apartment.Description = createDto.Description;
-        apartment.ContactInfo = createDto.ContactInfo;
-        apartment.RoomCount = createDto.RoomCount;
-        apartment.Space = createDto.Space;
-        apartment.LivingSpace = createDto.LivingSpace;
+        const apartment = { ...createDto } as Apartments;
         const added_apartment = await this.apartmentsRepository.save(apartment);
 
         return added_apartment;
