@@ -1,8 +1,9 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Apartments } from 'src/typeorm';
-import { DeleteResult, Repository } from 'typeorm';
+import { Between, DeleteResult, Repository } from 'typeorm';
 import { CreateDto } from './dto/create.dto';
+import { FilterDto } from './dto/filter.dto';
 
 @Injectable()
 export class ApartmentsService {
@@ -18,6 +19,18 @@ export class ApartmentsService {
 
     async getAllApartments(): Promise<Apartments[] | undefined> {
         const apartments = await this.apartmentsRepository.find({});
+
+        return apartments;
+    }
+
+    async filterApartments(params: FilterDto): Promise<Apartments[] | undefined> {
+        const filterDto = new FilterDto({ ...params });
+        const apartments = await this.apartmentsRepository.find({
+            Price: Between(filterDto.MinPrice, filterDto.MaxPrice),
+            Space: Between(filterDto.MinSpace, filterDto.MaxLivingSpace),
+            LivingSpace: Between(filterDto.MinLivingSpace, filterDto.MaxLivingSpace),
+            RoomCount: Between(filterDto.MinRoomCount, filterDto.MaxRoomCount),
+        });
 
         return apartments;
     }
