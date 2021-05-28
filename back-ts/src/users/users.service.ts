@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { encryptPassword } from 'src/security/encrypt';
 import { Users } from 'src/typeorm';
@@ -11,7 +11,8 @@ export class UsersService {
     async findUserByName(username: string): Promise<Users | undefined> {
         const user = await this.usersRepository.findOne({ Username: username });
 
-        return user;
+        if (user) return user;
+        throw new HttpException('User with such name does not exist', HttpStatus.NOT_FOUND);
     }
 
     async createUser(username: string, password: string): Promise<InsertResult> {
