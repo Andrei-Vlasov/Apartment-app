@@ -6,7 +6,7 @@ export class Users {
     UserID: number;
     @Column({ type: 'date' })
     DateJoined: string;
-    @Column()
+    @Column({ unique: true })
     Username: string;
     @Column()
     PasswordHash: string;
