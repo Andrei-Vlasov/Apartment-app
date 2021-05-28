@@ -2,7 +2,6 @@ import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
 import { checkPassword } from 'src/security/encrypt';
 import { Users } from 'src/typeorm';
 import { UsersService } from 'src/users/users.service';
-import { InsertResult } from 'typeorm';
 
 @Injectable()
 export class AuthService {
