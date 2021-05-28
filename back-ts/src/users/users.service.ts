@@ -15,17 +15,21 @@ export class UsersService {
         throw new HttpException('User with such name does not exist', HttpStatus.NOT_FOUND);
     }
 
-    async createUser(username: string, password: string): Promise<InsertResult> {
+    async createUser(username: string, password: string) {
+        console.log('user service create user');
+
         const passwordHash = await encryptPassword(password);
 
         const dateNow = new Date().toISOString().substr(0, 10);
 
-        const user = await this.usersRepository.insert({
+        const user = await this.usersRepository.create({
             DateJoined: dateNow,
             Username: username,
             PasswordHash: passwordHash,
             IsAdmin: false,
         });
+
+        await this.usersRepository.save(user);
 
         return user;
     }

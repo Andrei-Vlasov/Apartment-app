@@ -15,6 +15,8 @@ export class AuthController {
 
     @Post('register')
     async register(@Body() { username, password }: RegisterDto) {
+        console.log('authcontroller');
+
         const result = await this.authService.registerUser(username, password);
 
         return result;

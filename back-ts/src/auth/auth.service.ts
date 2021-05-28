@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
 import { checkPassword } from 'src/security/encrypt';
 import { Users } from 'src/typeorm';
 import { UsersService } from 'src/users/users.service';
@@ -14,9 +14,22 @@ export class AuthService {
         return null;
     }
 
-    async registerUser(username: string, password: string): Promise<InsertResult> {
-        const result = this.usersService.createUser(username, password);
+    async registerUser(username: string, password: string) {
+        try {
+            console.log('authservice');
 
-        return result;
+            const result = await this.usersService.createUser(username, password);
+            console.log('authservice created');
+
+            return result;
+        } catch (error) {
+            if (error?.code == '23505')
+                // unique violation
+                throw new HttpException(
+                    'User with such name already exists',
+                    HttpStatus.BAD_REQUEST
+                );
+            throw new HttpException(error, HttpStatus.INTERNAL_SERVER_ERROR);
+        }
     }
 }
