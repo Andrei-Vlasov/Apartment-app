@@ -12,7 +12,7 @@ export class UsersService {
         const user = await this.usersRepository.findOne({ Username: username });
 
         if (user) return user;
-        throw new HttpException('User with such name does not exist', HttpStatus.NOT_FOUND);
+        return null;
     }
 
     async createUser(username: string, password: string) {

@@ -10,16 +10,20 @@ export class AuthService {
 
     async validateUser(username: string, password: string): Promise<Users | null> {
         const user = await this.usersService.findUserByName(username);
-        if (user && checkPassword(password, user.PasswordHash)) return user;
-        return null;
+        if (!user) throw new HttpException('Wrong login', HttpStatus.BAD_REQUEST);
+
+        const isPasswordMatching = await checkPassword(password, user.PasswordHash);
+        console.log('password checked');
+        console.log(isPasswordMatching);
+
+        if (!isPasswordMatching) throw new HttpException('Wrong password', HttpStatus.BAD_REQUEST);
+
+        return user;
     }
 
     async registerUser(username: string, password: string) {
         try {
-            console.log('authservice');
-
             const result = await this.usersService.createUser(username, password);
-            console.log('authservice created');
 
             return result;
         } catch (error) {
