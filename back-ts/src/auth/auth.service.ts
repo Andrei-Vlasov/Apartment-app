@@ -13,8 +13,6 @@ export class AuthService {
         if (!user) throw new HttpException('Wrong login', HttpStatus.BAD_REQUEST);
 
         const isPasswordMatching = await checkPassword(password, user.PasswordHash);
-        console.log('password checked');
-        console.log(isPasswordMatching);
 
         if (!isPasswordMatching) throw new HttpException('Wrong password', HttpStatus.BAD_REQUEST);
 
