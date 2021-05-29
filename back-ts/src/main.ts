@@ -2,6 +2,7 @@ import { NestFactory } from '@nestjs/core';
 import { FastifyAdapter, NestFastifyApplication } from '@nestjs/platform-fastify';
 import { AppModule } from './app.module';
 import secureSession from 'fastify-secure-session';
+import fastifyPassport from 'fastify-passport';
 
 async function bootstrap() {
     const app = await NestFactory.create<NestFastifyApplication>(AppModule, new FastifyAdapter());
@@ -14,6 +15,9 @@ async function bootstrap() {
         secret: process.env.COOKIE_SECRET,
         salt: process.env.COOKIE_SALT,
     });
+
+    app.register(fastifyPassport.initialize());
+    app.register(fastifyPassport.secureSession());
 
     await app.listen(app_port, () => console.log(`Running on port ${app_port}`));
 }
