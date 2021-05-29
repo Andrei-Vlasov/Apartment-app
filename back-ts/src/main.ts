@@ -5,6 +5,7 @@ import secureSession from 'fastify-secure-session';
 
 async function bootstrap() {
     const app = await NestFactory.create<NestFastifyApplication>(AppModule, new FastifyAdapter());
+    const app_port = process.env.APP_PORT || 3000;
 
     app.register(secureSession, {
         cookie: {
@@ -14,6 +15,6 @@ async function bootstrap() {
         salt: process.env.COOKIE_SALT,
     });
 
-    await app.listen(3000);
+    await app.listen(app_port, () => console.log(`Running on port ${app_port}`));
 }
 bootstrap();
