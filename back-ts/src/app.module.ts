@@ -11,7 +11,7 @@ import { PassportModule } from '@nestjs/passport';
 
 @Module({
     imports: [
-        // passport
+        // passport+session
         PassportModule.register({ session: true }),
         // environment
         ConfigModule.forRoot({ envFilePath: '.env' }),
