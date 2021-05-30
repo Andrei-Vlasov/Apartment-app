@@ -7,10 +7,13 @@ import { entities } from './typeorm';
 import { UsersModule } from './users/users.module';
 import { AuthModule } from './auth/auth.module';
 import { ApartmentsModule } from './apartments/apartments.module';
+import { PassportModule } from '@nestjs/passport';
 
 @Module({
     imports: [
+        // environment
         ConfigModule.forRoot({ envFilePath: '.env' }),
+        // typeorm
         TypeOrmModule.forRoot({
             type: 'postgres',
             host: process.env.DB_HOST,
@@ -21,6 +24,9 @@ import { ApartmentsModule } from './apartments/apartments.module';
             entities: entities,
             synchronize: true,
         }),
+        // passport+session
+        PassportModule.register({ session: true }),
+        // Our modules
         ApartmentsModule,
         AuthModule,
         UsersModule,
