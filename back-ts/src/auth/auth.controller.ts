@@ -9,7 +9,7 @@ import {
     UseGuards,
 } from '@nestjs/common';
 import { AuthGuard } from '@nestjs/passport';
-import { AuthenticatedGuard } from 'src/guards';
+import { AuthenticatedGuard, LocalAuthGuard } from 'src/guards';
 import { AuthService } from './auth.service';
 import { RegisterDto } from './dto/register.dto';
 
@@ -18,10 +18,10 @@ export class AuthController {
     constructor(private readonly authService: AuthService) {}
 
     @HttpCode(HttpStatus.OK)
-    @UseGuards(AuthGuard('local'))
+    @UseGuards(LocalAuthGuard)
     @Post('login')
     async login(@Request() req) {
-        return req.isAuthenticated();
+        return 'login success';
     }
 
     @Post('register')
