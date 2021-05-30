@@ -4,10 +4,16 @@ import { AppModule } from './app.module';
 
 import * as session from 'express-session';
 import * as passport from 'passport';
+import { getRepository } from 'typeorm';
+import { Session } from './typeorm';
+import { TypeormStore } from 'connect-typeorm';
 
 async function bootstrap() {
     const app = await NestFactory.create<NestExpressApplication>(AppModule);
     const app_port = process.env.APP_PORT || 3000;
+
+    // typeorm session store
+    const sessionRepo = getRepository(Session);
 
     // express session
     app.use(
@@ -18,6 +24,8 @@ async function bootstrap() {
             secret: process.env.COOKIE_SECRET,
             resave: false,
             saveUninitialized: false,
+            // set session store
+            store: new TypeormStore().connect(sessionRepo),
         })
     );
 
