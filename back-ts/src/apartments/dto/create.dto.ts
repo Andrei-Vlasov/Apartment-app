@@ -6,9 +6,9 @@ export class CreateDto {
     GlobalX: number;
     GlobalY: number;
     Address: string;
-    LocalityID: number;
-    AreaID: number;
-    RegionID: number;
+    Locality: string;
+    Area: string;
+    Region: string;
     Price: number;
     Description: string;
     ContactInfo: string;

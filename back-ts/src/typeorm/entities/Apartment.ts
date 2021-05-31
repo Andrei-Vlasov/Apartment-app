@@ -19,11 +19,11 @@ export class Apartments {
     @Column({ nullable: true })
     Address: string;
     @Column()
-    LocalityID: number;
+    Locality: string;
     @Column()
-    AreaID: number;
+    Area: string;
     @Column()
-    RegionID: number;
+    Region: string;
     @Column()
     Price: number;
     @Column({ nullable: true, type: 'text' })
