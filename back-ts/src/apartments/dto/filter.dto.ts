@@ -18,10 +18,10 @@ export class FilterDto {
     MaxHeight?: number = 2147483647;
     MinYearBuilt?: number = 0;
     MaxYearBuilt?: number = 2147483647;
-    DealTypes?: string[];
-    Conditions?: string[];
-    WallTypes?: string[];
-    HeatingTypes?: string[];
+    DealTypes?: string;
+    Conditions?: string;
+    WallTypes?: string;
+    HeatingTypes?: string;
     OrderBy?: string;
 
     constructor(filterDto) {

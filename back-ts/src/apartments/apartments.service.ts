@@ -43,8 +43,13 @@ export class ApartmentsService {
         if ('MaxTotalFloors' in params || 'MinTotalFloors' in params) {
             conditions['TotalFloors'] = Between(filterDto.MinTotalFloors, filterDto.MaxTotalFloors);
         }
-        const apartments = await this.apartmentsRepository.find(conditions);
-
+        const where = {};
+        for (const extra of ['Condition', 'Heating', 'Walls']) {
+            if (extra in params) {
+                where[extra] = filterDto[extra];
+            }
+        }
+        const apartments = await this.apartmentsRepository.find({ ...conditions, where });
         return apartments;
     }
 
