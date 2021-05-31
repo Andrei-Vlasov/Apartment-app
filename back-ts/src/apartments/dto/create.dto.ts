@@ -11,7 +11,8 @@ export class CreateDto {
     Region: string;
     Price: number;
     Description: string;
-    ContactInfo: string;
+    ContactName: string;
+    ContactNumber: string;
     RoomCount: number;
     Space: number;
     LivingSpace: number;

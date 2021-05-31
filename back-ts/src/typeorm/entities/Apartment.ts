@@ -29,7 +29,9 @@ export class Apartments {
     @Column({ nullable: true, type: 'text' })
     Description: string;
     @Column()
-    ContactInfo: string;
+    ContactName: string;
+    @Column()
+    ContactNumber: string;
     @Column()
     RoomCount: number;
     @Column()
