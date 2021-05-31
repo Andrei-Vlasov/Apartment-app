@@ -1,7 +1,6 @@
 export default function Map({ MarkerItem, zoom = 12, center, page }) {
     const mapboxgl = require('mapbox-gl/dist/mapbox-gl.js');
-    mapboxgl.accessToken =
-        'pk.eyJ1IjoiaWxrcmJrIiwiYSI6ImNrb29jbTdndDA4MmwybnN6MGs5YnE0YW8ifQ.gp1OiIKAymjN21_Jf-cgIg';
+    mapboxgl.accessToken = process.env.NEXT_PUBLIC_MAP_TOKEN;
     let map = new mapboxgl.Map({
         container: 'map',
         style: 'mapbox://styles/mapbox/streets-v11',
