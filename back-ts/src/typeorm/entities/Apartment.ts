@@ -19,23 +19,27 @@ export class Apartments {
     @Column({ nullable: true })
     Address: string;
     @Column()
-    LocalityID: number;
+    Locality: string;
     @Column()
-    AreaID: number;
+    Area: string;
     @Column()
-    RegionID: number;
+    Region: string;
     @Column()
     Price: number;
     @Column({ nullable: true, type: 'text' })
     Description: string;
     @Column()
-    ContactInfo: string;
+    ContactName: string;
+    @Column()
+    ContactNumber: string;
     @Column()
     RoomCount: number;
     @Column()
     Space: number;
     @Column()
     LivingSpace: number;
+    @Column({ type: 'double precision' })
+    PricePerSq: number;
     @Column({ nullable: true })
     Height: number;
     @Column({ nullable: true })

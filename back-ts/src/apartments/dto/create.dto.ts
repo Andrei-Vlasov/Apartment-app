@@ -6,12 +6,13 @@ export class CreateDto {
     GlobalX: number;
     GlobalY: number;
     Address: string;
-    LocalityID: number;
-    AreaID: number;
-    RegionID: number;
+    Locality: string;
+    Area: string;
+    Region: string;
     Price: number;
     Description: string;
-    ContactInfo: string;
+    ContactName: string;
+    ContactNumber: string;
     RoomCount: number;
     Space: number;
     LivingSpace: number;

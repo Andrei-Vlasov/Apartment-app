@@ -1,7 +1,8 @@
-import { Controller, Body, Post, Get, Delete, Param } from '@nestjs/common';
+import { Controller, Body, Post, Get, Delete, Param, Query } from '@nestjs/common';
 import { ApartmentsService } from './apartments.service';
 import { Apartments } from 'src/typeorm';
 import { CreateDto } from './dto/create.dto';
+import { FilterDto } from './dto/filter.dto';
 
 @Controller('apartments')
 export class ApartmentsController {
@@ -12,9 +13,9 @@ export class ApartmentsController {
 
         return result;
     }
-    @Get()
-    async getAll() {
-        const result = await this.apartmentsService.getAllApartments();
+    @Post()
+    async filter(@Body() params: FilterDto) {
+        const result = await this.apartmentsService.filterApartments(params);
 
         return result;
     }
