@@ -17,12 +17,6 @@ export class ApartmentsService {
         return added_apartment;
     }
 
-    async getAllApartments(): Promise<Apartments[] | undefined> {
-        const apartments = await this.apartmentsRepository.find({});
-
-        return apartments;
-    }
-
     async filterApartments(params: FilterDto): Promise<Apartments[] | undefined> {
         const filterDto = new FilterDto({ ...params });
         const conditions = {
