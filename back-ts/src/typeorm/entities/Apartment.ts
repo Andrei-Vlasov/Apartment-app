@@ -38,6 +38,8 @@ export class Apartments {
     Space: number;
     @Column()
     LivingSpace: number;
+    @Column({ type: 'double precision' })
+    PricePerSq: number;
     @Column({ nullable: true })
     Height: number;
     @Column({ nullable: true })

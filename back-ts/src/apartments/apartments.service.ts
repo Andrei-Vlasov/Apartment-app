@@ -11,6 +11,7 @@ export class ApartmentsService {
         @InjectRepository(Apartments) private readonly apartmentsRepository: Repository<Apartments>
     ) {}
     async createApartment(createDto: CreateDto): Promise<Apartments | undefined> {
+        createDto['PricePerSq'] = (createDto['Price'] / createDto['LivingSpace']).toFixed(2);
         const apartment = { ...createDto } as Apartments;
         const added_apartment = await this.apartmentsRepository.save(apartment);
 
