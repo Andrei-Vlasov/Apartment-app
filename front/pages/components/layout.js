@@ -6,6 +6,7 @@ export default function Layout({ children, title = 'Appartment' }) {
     return (
         <>
             <Head>
+                <link rel="shortcut icon" href="./img/logo.ico" />
                 <link
                     href="https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.css"
                     rel="stylesheet"
