@@ -1,0 +1,120 @@
+.form
+    display: flex
+    flex-wrap: wrap
+
+    padding: 15px
+    input, select, button
+        border: none
+        padding: 15px
+        border-radius: 2px
+        background: $lightGrey
+        font-weight: 300
+        @include font ($mainFont, 1rem, $black)
+
+.form__title
+    width: calc((((100% - 10px) / 3) * 2) + 5px )
+    margin-right: 5px
+    @include smallDevice
+        width: 100%
+        margin-right: 0px
+
+.form__select--rooms
+    width: calc((100% - 10px) / 3)
+    @include smallDevice
+            width: calc((100% - 5px) / 2)
+            margin-right: 5px
+            margin-top: 5px
+
+.form__select--price
+    width: calc((100% - 10px) / 3)
+    margin-right: 5px
+    margin-top: 5px
+    @include smallDevice
+        width: calc((100% - 5px) / 2)
+
+.form__select--price-first
+    @include smallDevice
+        margin-right: 0px !important
+
+.form__btn
+    margin-top: 5px
+    width: calc( (100% - 10px) / 3 )
+    display: flex
+    align-items: center
+    justify-content: center
+    color: $white !important
+    background: $blue !important
+    border: 1px solid transparent !important
+    transition: all ease-in .3s
+    @include font ($mainFont, 1rem, $black)
+    &:hover
+        color: $blue !important
+        background: $white !important
+        border: 1px solid $blue !important
+    @include smallDevice
+        width: calc( (100% - 5px) / 2 )
+
+.form__btn-checkbox
+    display: none
+
+.form__list--show
+    margin-top: 15px
+    display: none
+    flex-wrap: wrap
+    width: 100%
+
+.form__btn-checkbox:checked ~ .form__list--show
+    display: flex
+    
+.form__item
+    width: calc( (100% - 10px) / 3 )
+    margin-right: 5px
+    margin-top: 5px
+    &:nth-child(3n)
+        margin-right: 0
+    > select, input
+        width: 100%
+    @include smallDevice
+        width: calc( (100% - 5px) / 2 )
+        &:nth-child(3n)
+            margin-right: 5px
+        &:nth-child(2n)
+            margin-left: 0
+            margin-right: 0
+    @include extraSmallDevice
+        width: 100%
+        margin: 0
+        margin-top: 5px
+        &:nth-child(2n)
+            margin-left: 0
+        &:nth-child(3n)
+            margin-right: 0
+
+.form__sort
+    margin-top: 20px
+    width: calc( (100% - 10px) / 3 )
+    @include smallDevice
+        width: calc( (100% - 5px) / 2 )
+    @include extraSmallDevice
+        width: 100%
+        margin: 0
+        margin-top: 5px
+
+.form__search
+    margin-top: 20px
+    margin-left: 5px
+    padding: 15px !important
+    width: calc( (100% - 10px) / 3 )
+    display: flex
+    align-items: center
+    justify-content: center
+    transition: all ease-in .3s
+    @include font ($mainFont, 1rem, $black)
+    &:hover
+        color: $white
+        background: $blue
+    @include smallDevice
+        width: calc( (100% - 5px) / 2 )
+    @include extraSmallDevice
+        margin-left: 0
+        width: 100%
