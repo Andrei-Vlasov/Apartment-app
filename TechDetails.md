@@ -11,6 +11,8 @@ Backend:
 - TypeORM + PostgreSQL
 - Passport.js login/register
 - bcrypt hashing
+- cookie sessions
+- connect-typeorm session storage
 
 Frontend:
 - JavaScript
