@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Apartments } from 'src/typeorm';
-import { Between, DeleteResult, Not, Repository } from 'typeorm';
+import { Between, DeleteResult, Repository } from 'typeorm';
 import { CreateDto } from './dto/create.dto';
 import { FilterDto } from './dto/filter.dto';
 
@@ -43,10 +43,6 @@ export class ApartmentsService {
         if ('MaxTotalFloors' in params || 'MinTotalFloors' in params) {
             conditions['TotalFloors'] = Between(filterDto.MinTotalFloors, filterDto.MaxTotalFloors);
         }
-        // for (let key in myDictionary) {
-        //     let value = myDictionary[key];
-        //     // Use key and value
-        // }
         const apartments = await this.apartmentsRepository.find(conditions);
 
         return apartments;

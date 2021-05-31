@@ -13,8 +13,8 @@ export class ApartmentsController {
 
         return result;
     }
-    @Get()
-    async filter(@Query() params: FilterDto) {
+    @Post()
+    async filter(@Body() params: FilterDto) {
         const result = await this.apartmentsService.filterApartments(params);
 
         return result;
