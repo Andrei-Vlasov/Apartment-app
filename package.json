@@ -16,8 +16,5 @@
   "bugs": {
     "url": "https://github.com/ilkrbk/Apartment-app/issues"
   },
-  "homepage": "https://github.com/ilkrbk/Apartment-app#readme",
-  "devDependencies": {
-    "husky": "^4.3.3"
-  }
+  "homepage": "https://github.com/ilkrbk/Apartment-app#readme"
 }
