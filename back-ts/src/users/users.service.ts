@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { encryptPassword } from 'src/security/encrypt';
-import { Users } from 'src/typeorm';
+import { encryptPassword } from '../security/encrypt';
+import { Users } from '../typeorm';
 import { Repository } from 'typeorm';
 
 @Injectable()
