@@ -5,8 +5,8 @@
   "license": "MIT",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 0",
-    "nest-lint": "cd back-ts && npm run lint",
-    "front-lint": "cd front && npm run lint",
+    "nest-lint": "npm --prefix ./back-ts run lint",
+    "front-lint": "npm --prefix ./front run lint",
     "start": "cd back-ts && npm install && npm start"
   },
   "repository": {
