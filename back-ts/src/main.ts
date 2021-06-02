@@ -11,7 +11,7 @@ import { TypeormStore } from 'connect-typeorm';
 async function bootstrap() {
     const app = await NestFactory.create<NestExpressApplication>(AppModule);
     app.enableCors();
-    const app_port = process.env.APP_PORT || 3000;
+    const app_port = process.env.PORT || 3000;
 
     // typeorm session store
     const sessionRepo = getRepository(Session);
