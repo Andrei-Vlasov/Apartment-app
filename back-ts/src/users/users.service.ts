@@ -16,8 +16,6 @@ export class UsersService {
     }
 
     async createUser(username: string, password: string): Promise<Users> {
-        console.log('user service create user');
-
         const passwordHash = await encryptPassword(password);
 
         const dateNow = new Date().toISOString().substr(0, 10);
