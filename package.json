@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 0",
     "nest-lint": "npm --prefix ./back-ts run lint",
     "front-lint": "npm --prefix ./front run lint",
-    "start": "cd back-ts && npm install && npm start"
+    "start:prod": "cd back-ts && npm install && npm start"
   },
   "repository": {
     "type": "git",
