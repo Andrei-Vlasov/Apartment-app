@@ -1,3 +1,5 @@
+import axios from 'axios';
+
 export default function Form() {
     let formListShow = [
         {
@@ -98,7 +100,7 @@ export default function Form() {
             disabled: 'Ремонт',
             option: [
                 { id: 1, title: 'Без ремонта' },
-                { id: 2, title: '"Бабушкин ремонт"' },
+                { id: 2, title: 'Старый ремонт' },
                 { id: 3, title: 'Евроремонт' },
                 { id: 4, title: 'Дизайнерский ремонт' },
             ],
@@ -136,9 +138,43 @@ export default function Form() {
         },
     ];
 
+    const SubmitClick = async (e) => {
+        e.preventDefault();
+        axios
+            .post('http://localhost:3000/apartments', {
+                Address: 'Пушкинская',
+                MinPrice: 0,
+                MaxPrice: 200000,
+                MinPriceSq: 0,
+                MaxPriceSq: 5000,
+                MinSpace: 10,
+                MaxSpace: 100,
+                MinLivingSpace: 0,
+                MaxLivingSpace: 102301289012,
+                MinRoomCount: 1,
+                MaxRoomCount: 5,
+                MinFloor: 1,
+                MaxFloor: 10,
+                MinTotalFloors: 1,
+                MaxTotalFloors: 9,
+                MinHeight: 0,
+                MaxHeight: 4,
+                MinYearBuilt: 0,
+                MaxYearBuilt: 2020,
+                DealTypes: 'flat',
+                Conditions: 'Старый ремонт',
+                WallTypes: 'Кирпичные',
+                HeatingTypes: 'Автономное',
+                OrderBy: 'Самые дешёвые',
+            })
+            .then((response) => {
+                console.log(response);
+            });
+    };
+
     return (
         <>
-            <form className="form">
+            <form onSubmit={SubmitClick} className="form">
                 <input
                     type="text"
                     placeholder="Город, улица, станция метро"
@@ -194,7 +230,9 @@ export default function Form() {
                         <option key={id}>{title}</option>
                     ))}
                 </select>
-                <button className="form__search">Искать</button>
+                <button type="submit" className="form__search">
+                    Искать
+                </button>
             </form>
         </>
     );

@@ -1,11 +1,15 @@
+import React, { useContext } from 'react';
 import Slider from 'react-slick';
 import Link from 'next/link';
 import Image from 'next/image';
+import Context from '../../pages/search/context';
 
 export default function SearchItem({
     itemId,
     images,
     price,
+    lat,
+    lng,
     pricePerSquare,
     address,
     mainSquare,
@@ -28,9 +32,21 @@ export default function SearchItem({
         slidesToScroll: 1,
     };
 
+    const value = useContext(Context);
+
     return (
         <>
-            <li className="search__item-article" value={itemId} key={itemId}>
+            <li
+                className="search__item-article"
+                key={itemId}
+                onMouseEnter={() => {
+                    value.setLat(lat);
+                    value.setLng(lng);
+                }}
+                onMouseLeave={() => {
+                    value.setLat();
+                }}
+            >
                 <Slider {...settings}>
                     {images.map(({ id, src }) => (
                         <div className="search__item-slider" key={id}>
