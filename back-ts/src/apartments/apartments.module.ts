@@ -1,6 +1,6 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { Apartments } from 'src/typeorm';
+import { Apartments } from '../typeorm';
 import { ApartmentsService } from './apartments.service';
 import { ApartmentsController } from './apartments.controller';
 
