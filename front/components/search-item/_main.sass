@@ -1,0 +1,150 @@
+.search__item-article
+    display: flex
+    position: relative
+    margin: 15px 0
+    &::before
+        content: ''
+        width: 100%
+        height: 1px
+        position: absolute
+        left: 0
+        top: 0
+        background: $lightGrey
+    &:last-child
+        &::after
+            content: ''
+            width: 100%
+            height: 1px
+            position: absolute
+            left: 0
+            bottom: 0
+            background: $lightGrey
+    @include smallDevice
+        flex-direction: column 
+
+.slick-list
+    z-index: -1
+
+.slick-slider
+    width: 50%
+    margin-right: 15px
+    @include smallDevice
+        width: 100%
+
+.slick-prev
+    left: 0
+    &:before
+        content: '' !important
+        background: $blue
+        width: 30px
+        height: 50px
+        position: absolute
+        left: 20px
+        top: 50%
+        transform: translateY(-50%)
+
+.slick-next
+    right: 0
+    &:before
+        content: '' !important
+        background: $blue
+        width: 30px
+        height: 50px
+        position: absolute
+        right: 20px
+        top: 50%
+        transform: translateY(-50%)
+
+.search__item-slider
+    position: relative
+    overflow: hidden
+    width: 50%
+    height: 300px
+    margin-right: 15px
+    @include smallDevice
+        width: 100%
+    @include extraSmallDevice
+        height: 200px
+
+.search__item-info
+    display: flex
+    flex-direction: column
+    width: 50%
+    @include smallDevice
+        margin-top: 20px
+        padding: 0 5px
+        width: 100%
+
+.article__price
+    font-weight: 700
+    @include font ($basicFont, 2rem, $black)
+    @include largeDevice
+        font-size: 1.7rem
+
+.article__price-per-square
+    font-weight: 700 
+    @include font ($basicFont, 0.8rem, $darkGrey)
+
+.article__address
+    margin-top: 20px
+    font-weight: 700 
+    @include font ($basicFont, 1.2rem, $black)
+    @include largeDevice
+        font-size: 1rem
+
+.article__wrap-details
+    display: flex
+    flex-wrap: wrap
+    margin-top: 10px
+    > span
+        margin-right: 10px
+        margin-top: 10px
+        width: calc( 50% - 10px )
+        @include font ($basicFont, 1rem, $black)
+        &:nth-child(2n)
+            margin-right: 0
+            width: 50%
+
+.article__square
+    display: flex
+    margin-top: 20px
+    span
+        font-weight: 700
+        display: flex
+        padding: 5px 15px
+        background: $lightGrey
+        border-radius: 10px
+        margin-right: 10px
+        @include font ($basicFont, 0.8rem, $black)
+        &:last-child
+            margin-right: 0
+
+.article__floor
+    span
+        font-weight: 700
+
+.article__wrap-btns
+    display: flex
+    margin-top: auto
+    @include smallDevice
+        margin-top: 20px
+
+.article__link
+    padding: 12px
+    border-radius: 30px
+    background: $lightGrey
+    margin-right: 10px
+    text-transform: uppercase
+    @include font ($basicFont, 1rem, $black)
+
+.article__share, .article__like
+    display: flex
+    align-items: center
+    padding: 12px 13px
+    border-radius: 40px
+    background: $lightGrey
+    margin-right: 10px
+    font-size: 1rem
+
+.article__share
+    margin-left: auto

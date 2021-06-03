@@ -1,26 +1,18 @@
-import Head from 'next/head';
-import HeaderLayout from './components/header/header';
-import MainTopBlock from './components/main-top-block/main-top-block';
-import MainViewSelect from './components/main-view-select/main-view-select';
-import MainAbout from './components/main-about/main-about';
-import Cooperation from './components/cooperation/cooperation';
-import Info from './components/main-info/main-info';
-import Footer from './components/footer/footer';
-import Layout from './components/layout';
+import MainTopBlock from '../components/main/main-top-block/main-top-block';
+import MainViewSelect from '../components/main/main-view-select/main-view-select';
+import MainAbout from '../components/main/main-about/main-about';
+import Cooperation from '../components/main/cooperation/cooperation';
+import Info from '../components/main/main-info/main-info';
+import Layout from './layout';
 
 export default function Index() {
     return (
-        <Layout>
-            <Head>
-                <title>Appartment</title>
-            </Head>
-            <HeaderLayout></HeaderLayout>
+        <Layout title="Appartment">
             <MainTopBlock></MainTopBlock>
             <MainViewSelect></MainViewSelect>
             <MainAbout></MainAbout>
             <Cooperation></Cooperation>
             <Info></Info>
-            <Footer></Footer>
         </Layout>
     );
 }

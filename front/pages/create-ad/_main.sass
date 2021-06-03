@@ -1,0 +1,106 @@
+.create-ad
+    width: 40%
+    margin: 0 auto
+    padding-bottom: 100px
+    @include largeDevice
+        width: 50%
+    @include mediumDevice
+        width: 80%
+    @include smallDevice
+        width: 90%
+
+.create-ad__title
+    position: relative
+    text-align: center
+    font-weight: 700
+    @include font ($basicFont, 2rem, $black)
+    &::after
+        content: ''
+        width: 30%
+        height: 8px
+        background: $blue
+        position: absolute
+        transform: translateX(-50%)
+        left: 50%
+        bottom: -16px
+
+.create-ad__form
+    margin-top: 30px
+    > #map
+        margin-top: 10px
+        width: 100% !important
+        height: 200px !important
+
+.create-ad__list
+    display: flex
+    flex-wrap: wrap
+    width: 100%
+
+.create-ad__item
+    width: calc( (100% - 10px) / 2 )
+    margin-right: 5px
+    &:nth-child(2n)
+        margin-right: 0
+        margin-left: 5px
+    select
+        width: 100%
+        margin-top: 10px
+        border: none
+        padding: 15px 25px 15px 15px
+        border-radius: 2px
+        background: $lightGrey
+        font-weight: 300
+        @include font ($mainFont, 1rem, $black)
+    @include extraSmallDevice
+        width: 100%
+        margin: 0
+        &:nth-child(2n)
+            margin: 0
+
+.create-ad__textarea, .create-ad__btn, .create-ad__input
+    margin-top: 10px
+    width: 100%
+    border: none
+    padding: 15px
+    border-radius: 2px
+    background: $lightGrey
+    font-weight: 300
+    @include font ($mainFont, 1rem, $black)
+    transition: all ease-in .3s
+
+.create-ad__btn:hover
+    color: $white
+    background: $blue
+
+.create-ad__input
+    padding: 15px 25px 15px 15px
+    width: calc( (100% - 10px) / 2 )
+    margin-right: 5px
+    &:nth-child(2n)
+        margin-right: 0
+        margin-left: 5px
+    @include extraSmallDevice
+        width: 100%
+        &:nth-child(2n)
+            margin-right: 0
+            margin-left: 0
+        &:first-child
+            margin: 0
+
+.create__file-style
+    cursor: pointer
+    display: flex
+    justify-content: center
+    margin-top: 10px
+    width: 100%
+    padding: 15px
+    border-radius: 2px
+    background: $lightGrey
+    font-weight: 300
+    @include font ($mainFont, 1rem, $black)
+
+.create__file
+    display: none
+
+.create-ad__textarea
+    resize: none
