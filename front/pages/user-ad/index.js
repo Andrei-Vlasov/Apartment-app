@@ -1,5 +1,5 @@
 import Map from '../map';
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import SearchItem from '../../components/search-item/index';
 import Layout from '../layout';
 import Context from '../search/context';
@@ -126,6 +126,6 @@ export default function Search() {
                 </div>
                 <Map zoom={11} latP={50.5} lngP={30.5} page="search" className="search__map" />
             </section>
-            </Context.Provider>
+        </Context.Provider>
     );
 }
