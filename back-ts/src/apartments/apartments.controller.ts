@@ -14,7 +14,7 @@ export class ApartmentsController {
         return result;
     }
     @Post()
-    async filter(@Body() params: FilterDto) {
+    async filter(@Body() params: FilterDto): Promise<Apartments[]> {
         const result = await this.apartmentsService.filterApartments(params);
 
         return result;
