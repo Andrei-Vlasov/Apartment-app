@@ -11,7 +11,7 @@ export default function Login() {
                     <input type="text" placeholder="Пароль" className="login__password" />
                     <button className="login__btn">Войти</button>
                 </form>
-                <Link href="/components/register">
+                <Link href="/register">
                     <a className="login__link">Регистрация</a>
                 </Link>
             </div>

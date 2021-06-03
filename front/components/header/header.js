@@ -6,12 +6,12 @@ export default function HeaderLayout() {
     let menu = [
         {
             id: 1,
-            link: '/components/create-ad',
+            link: '/create-ad',
             title: 'Создать объявление',
         },
         {
             id: 2,
-            link: '/components/user-ad',
+            link: '/user-ad',
             title: 'Мои объявления',
         },
         {
@@ -37,15 +37,15 @@ export default function HeaderLayout() {
                     </a>
                 </Link>
                 <div>
-                    {router.asPath != '/components/instruction' && (
-                        <Link href="/components/instruction">
+                    {router.asPath != '/instruction' && (
+                        <Link href="/instruction">
                             <a className="header__link-about">
                                 <i className="fas fa-plus"></i>
                                 <span>Рекомендации</span>
                             </a>
                         </Link>
                     )}
-                    <Link href="/components/sing-in">
+                    <Link href="/sing-in">
                         <a className="header__link-login">
                             <i className="fas fa-user"></i>
                         </a>

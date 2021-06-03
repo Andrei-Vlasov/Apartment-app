@@ -36,7 +36,7 @@ export default function Register() {
                         Регистрация
                     </button>
                 </form>
-                <Link href="/components/sing-in">
+                <Link href="/sing-in">
                     <a className="login__link">Войти</a>
                 </Link>
             </div>

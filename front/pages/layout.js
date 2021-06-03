@@ -1,6 +1,6 @@
 import Head from 'next/head';
-import Footer from './footer/footer';
-import HeaderLayout from './header/header';
+import Footer from '../components/footer/footer';
+import HeaderLayout from '../components/header/header';
 
 export default function Layout({ children, title = 'Appartment' }) {
     return (

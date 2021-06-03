@@ -19,7 +19,7 @@ export default function MainTopBlock() {
                             <option>Львов</option>
                             <option>Харьков</option>
                         </select>
-                        <Link href="/components/search">
+                        <Link href="../../../search">
                             <a className="main-top-block__btn">Поиск</a>
                         </Link>
                     </form>
