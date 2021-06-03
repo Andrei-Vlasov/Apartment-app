@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { Apartments } from 'src/typeorm';
+import { Apartments } from '../typeorm';
 import { Between, DeleteResult, Repository } from 'typeorm';
 import { CreateDto } from './dto/create.dto';
 import { FilterDto } from './dto/filter.dto';
