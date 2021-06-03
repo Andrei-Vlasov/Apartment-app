@@ -9,10 +9,7 @@ describe('AuthController', () => {
     let authController: AuthController;
     let authService: AuthService;
 
-    const registerUserDto = {
-        username: 'gena',
-        password: '0000',
-    };
+    let registerUserDto;
 
     beforeEach(async () => {
         const module: TestingModule = await Test.createTestingModule({
@@ -22,6 +19,12 @@ describe('AuthController', () => {
 
         authController = module.get<AuthController>(AuthController);
         authService = module.get<AuthService>(AuthService);
+
+        registerUserDto = {
+            username: 'gena',
+            password: '0000',
+        };
+
         jest.clearAllMocks();
     });
 
@@ -32,8 +35,4 @@ describe('AuthController', () => {
     it('should register a user and return a user', async () => {
         expect(await authController.register(registerUserDto)).toEqual(userStub());
     });
-
-    // it('should login a user and return a user', async () => {
-    //     expect(await authController.login(registerUserDto)).toEqual(userStub());
-    // });
 });
